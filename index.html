@@ -166,7 +166,7 @@
             text-align: center;
           }
 }
-    
+
     /* Media Queries for Responsiveness */
     @media (max-width: 768px) {
     /* Responsive Footer */
@@ -322,164 +322,116 @@
     <!-- Header Section -->
     <header>
         <h1>Govt. Tahir Model Girls High School</h1>
-        <p>"Teaching Every Student is Our Job, Let's End Illiteracy!"</p>
+        <p>Welcome to our school's official website. Learn more about us, our values, and our programs.</p>
     </header>
 
     <!-- Navigation Bar -->
     <nav>
-        <a href="#about">About Us</a>
+        <a href="#about-us">About Us</a>
         <a href="#academics">Academics</a>
         <a href="#student-life">Student Life</a>
         <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact Us</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <!-- About Us Section -->
-    <section id="about" class="about-us">
-        <div>
-            <h2>About Us</h2>
-            <p>We are a government school dedicated to providing quality education and nurturing young minds.
-                Our school has a long history of academic excellence and student success.</p>
-        </div>
+    <section id="about-us" class="about-us">
+        <h2>About Us</h2>
+        <p>Govt. Tahir Model Girls High School, established in 1992, offers a quality education for girls in Lahore. We emphasize academic excellence, personal development, and community service.</p>
     </section>
 
     <!-- Academics Section -->
     <section id="academics" class="academics">
         <h2>Academics</h2>
-        <p>Our curriculum includes a broad range of subjects aimed at preparing students for a successful future.
-            From science to arts, we ensure holistic development.</p>
+        <p>We offer a variety of programs aimed at developing strong academic foundations. Our curriculum ensures that students are well-prepared for university and beyond.</p>
     </section>
 
     <!-- Student Life Section -->
     <section id="student-life" class="student-life">
         <h2>Student Life</h2>
-        <p>Student life at our school includes various extracurricular activities such as Girl Guiding, Annual Mena Bazaar,
-            and much more!</p>
+        <p>Our school offers numerous extracurricular activities that help students grow in leadership, sports, and the arts, along with opportunities to participate in community service.</p>
     </section>
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <h2>Gallery</h2>
-        <img src="http://gghs-tahir-model.netlify.app/Images/school9.jpg" alt="School Image">
-        <img src="http://gghs-tahir-model.netlify.app/Images/school6.jpg" alt="School Image">
+        <p>Explore some images showcasing the vibrant life of our students.</p>
+        <!-- Image gallery goes here -->
+        <div class="gallery">
+            <img src="path_to_image1.jpg" alt="Gallery Image 1" onclick="openImage(this)">
+            <img src="path_to_image2.jpg" alt="Gallery Image 2" onclick="openImage(this)">
+            <img src="path_to_image3.jpg" alt="Gallery Image 3" onclick="openImage(this)">
+        </div>
+        <div class="overlay" id="overlay">
+            <span class="close" onclick="closeImage()">&times;</span>
+            <img id="overlay-img" src="" alt="Enlarged Image">
+            <button class="nav-btn nav-left" onclick="changeImage(-1)">&#10094;</button>
+            <button class="nav-btn nav-right" onclick="changeImage(1)">&#10095;</button>
+        </div>
+        <h3>Location</h3>
+        <div id="map"></div> <!-- Leaflet map will be embedded here -->
     </section>
-    
-       <div class="overlay" id="overlay">
-        <button class="nav-btn nav-left" id="prevBtn">&lt;</button>
-        <img src="" alt="" id="overlay-img">
-        <button class="nav-btn nav-right" id="nextBtn">&gt;</button>
-        <span class="close" id="close">&times;</span>
-    </div>
 
-    <!-- Contact Us Section -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
-        <p>For more information, feel free to reach out to us.</p>
+        <p>If you have any questions or would like to learn more, feel free to contact us.</p>
     </section>
-     <div id="map"></div>
+
     <!-- Footer Section -->
     <footer>
-      <div class="footer-container">
-        <div class="footer-section">
-          <h3>GGHS-Tahir-Model</h3>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-google"></i></a>
-          </div>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="quick-links">
+                    <a href="#about-us">About Us</a>
+                    <a href="#academics">Academics</a>
+                    <a href="#student-life">Student Life</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-          <div class="quick-links">
-            <a href="http://hed.punjab.gov.pk/colleges">http://hed.punjab.gov.pk/colleges</a>
-            <a href="http://biserawalpindi.edu.pk/">http://biserawalpindi.edu.pk/</a>
-            <a href="http://www.bisegrw.edu.pk/">http://www.bisegrw.edu.pk/</a>
-            <a href="https://bisesahiwal.edu.pk/">https://bisesahiwal.edu.pk/</a>
-            <a href="https://bisebwp.edu.pk/">https://bisebwp.edu.pk/</a>
-            <a href="https://bisefsd.edu.pk/">https://bisefsd.edu.pk/</a>
-            <a href="http://biselahore.com/">http://biselahore.com/</a>
-            <a href="http://lcwu.edu.pk/">http://lcwu.edu.pk/</a>
-            <a href="http://www.gcuf.edu.pk/">http://www.gcuf.edu.pk/</a>
-          </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Govt. Tahir Model Girls High School. All rights reserved.</p>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>Copyright © 2021 GGHS-Tahir-Model. All Rights Reserved.</p>
-      </div>
     </footer>
-    <!-- Font Awesome Icons (for social media) -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-             <!-- Leaflet JS -->
+
+    <!-- JavaScript for Map and Image Overlay -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
     <script>
-        // Initialize the map
-        var map = L.map('map').setView([31.5323, 74.3637], 13); // Coordinates of Sheran Wali Park, Lahore
-
-        // Add OpenStreetMap tile layer
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Add a marker to the map
-        L.marker([31.5323, 74.3637]).addTo(map)
-            .bindPopup('<b>Welcome to Sheran Wali Park!</b><br>Shalamar Town, Lahore.')
+        // Map Initialization
+        const map = L.map('map').setView([31.5204, 74.3587], 15); // Coordinates for Lahore
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+        L.marker([31.5204, 74.3587]).addTo(map)
+            .bindPopup('Govt. Tahir Model Girls High School')
             .openPopup();
 
+        // Image Gallery JavaScript
+        let currentImageIndex = 0;
+        function openImage(element) {
+            const overlay = document.getElementById('overlay');
+            const overlayImg = document.getElementById('overlay-img');
+            overlay.style.display = 'flex';
+            overlayImg.src = element.src;
+            currentImageIndex = [...element.parentElement.children].indexOf(element);
         }
-    </script>
-        <script>
-      const images = document.querySelectorAll('.gallery img');
-      const overlay = document.getElementById('overlay');
-      const overlayImg = document.getElementById('overlay-img');
-      const close = document.getElementById('close');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      let currentIndex = 0;
-    
-      // Function to show the overlay with the clicked image
-      function showImage(index) {
-        overlayImg.src = images[index].src;
-        overlay.style.display = 'flex';
-        currentIndex = index;
-      }
-    
-      // Event listener for clicking on gallery images
-      images.forEach((img, index) => {
-        img.addEventListener('click', () => {
-          showImage(index);
-        });
-      });
-    
-      // Event listener for clicking the close button
-      close.addEventListener('click', () => {
-        overlay.style.display = 'none';
-        overlayImg.src = '';
-      });
-    
-      // Event listener for clicking outside the image to close
-      overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-          overlay.style.display = 'none';
-          overlayImg.src = '';
+        function closeImage() {
+            document.getElementById('overlay').style.display = 'none';
         }
-      });
-    
-      // Event listeners for navigation buttons
-      prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-      });
-    
-      nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-      });
-    
-      // Smooth transitions for overlay
-      overlay.style.transition = 'opacity 0.3s ease-in-out';
-      overlayImg.style.transition = 'transform 0.3s ease-in-out';
+        function changeImage(direction) {
+            const images = document.querySelectorAll('.gallery img');
+            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            document.getElementById('overlay-img').src = images[currentImageIndex].src;
+        }
     </script>
 </body>
 </html>
