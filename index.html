@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Govt. Tahir Model Girls High School</title>
+    <link href="https://fonts.googleapis.com/css2?family=FONT_NAME:wght@700&display=swap" rel="stylesheet">
     <style>
         /* General Reset */
         * {
@@ -26,10 +27,13 @@
             text-align: center;
             background-size: cover;
         }
-        header h1 {
-            font-size: 3.5rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        }
+            header h1 {
+      font-family: 'FONT_NAME', sans-serif;
+      font-weight: bold;
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
         header p {
             font-size: 1.2rem;
             margin-top: 20px;
@@ -79,13 +83,12 @@
             background-color: #fff;
             text-align: center;
         }
-        .gallery img {
-            width: 100%;
-            max-width: 90%;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
+               .gallery img {
+          width: 100%;
+          height: auto;
+          max-width: 600px; /* Adjust as needed */
+          margin-bottom: 20px;
+}
         .contact {
             background-color: #f0f8ff;
             text-align: center;
@@ -201,25 +204,41 @@
         <h2>Contact Us</h2>
         <p>For more information, feel free to reach out to us.</p>
     </section>
+    <div id="map" style="height: 400px; width: 100%;"></div>
+    <script>
+      function initMap() {
+        var location = {lat: 31.5497, lng: 74.3436}; // Coordinates for Lahore, Punjab
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: location
+        });
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
     <!-- Footer Section -->
     <footer>
-        <div class="quick-links">
-            <a href="https://hed.punjab.gov.pk/">HED Punjab</a>
-            <a href="http://mis.hed.punjab.gov.pk/">HED MIS</a>
-            <a href="https://hed.punjab.gov.pk/colleges">Colleges HED</a>
-            <a href="https://www.punjab.gov.pk/hed">Punjab HED</a>
-            <a href="http://www.biselahore.com/">Bise Lahore</a>
-            <a href="http://www.bisefsd.edu.pk/">Bise Faisalabad</a>
-            <a href="https://gcu.edu.pk/">GC University</a>
-            <a href="https://bisesahiwal.edu.pk/">Bise Sahiwal</a>
-            <a href="http://www.bisegrw.edu.pk/">Bise GRW</a>
-            <a href="https://www.bisebwp.edu.pk/">Bise BWP</a>
-            <a href="http://biserawalpindi.edu.pk/">Bise Rawalpindi</a>
-            <a href="https://www.bisedgkhan.edu.pk/">Bise DG Khan</a>
-            <a href="http://www.bisesargodha.edu.pk/">Bise Sargodha</a>
-            <a href="http://www.lcwu.edu.pk/">LCWU</a>
-        </div>
+       <footer>
+  <div class="quick-links">
+    <a href="https://hed.punjab.gov.pk/">Higher Education Department Punjab</a>
+    <a href="http://mis.hed.punjab.gov.pk/">Management Information System</a>
+    <a href="https://hed.punjab.gov.pk/colleges">Colleges in Punjab</a>
+    <a href="https://www.punjab.gov.pk/hed">Punjab Government Higher Education</a>
+    <a href="http://www.biselahore.com/">Board of Intermediate and Secondary Education Lahore</a>
+    <a href="http://www.bisefsd.edu.pk/">Board of Intermediate and Secondary Education Faisalabad</a>
+    <a href="https://gcu.edu.pk/">Government College University Lahore</a>
+    <a href="https://bisesahiwal.edu.pk/">Board of Intermediate and Secondary Education Sahiwal</a>
+    <a href="http://www.bisegrw.edu.pk/">Board of Intermediate and Secondary Education Gujranwala</a>
+    <a href="https://www.bisebwp.edu.pk/">Board of Intermediate and Secondary Education Bahawalpur</a>
+    <a href="http://biserawalpindi.edu.pk/">Board of Intermediate and Secondary Education Rawalpindi</a>
+    <a href="https://www.bisedgkhan.edu.pk/">Board of Intermediate and Secondary Education Dera Ghazi Khan</a>
+    <a href="http://www.bisesargodha.edu.pk/">Board of Intermediate and Secondary Education Sargodha</a>
+    <a href="http://www.lcwu.edu.pk/">Lahore College for Women University</a>
+  </div>
         <div class="social-icons">
             <i class="fab fa-facebook-f"></i>
             <i class="fab fa-twitter"></i>
