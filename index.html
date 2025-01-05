@@ -64,7 +64,7 @@
         }
         .about-us {
             background-color: #e9ecef;
-            background-image: url('https://gghs-tahir-model.netlify.app/Images/school2.jpg');
+            background-image: url('https://gghs-tahir-model.netlify.app/Images/school4.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -340,11 +340,14 @@
     <section id="gallery" class="gallery">
         <h2>Gallery</h2>
         <div class="gallery-images">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school9.jpg" alt="1">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school6.jpg" alt="2">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school8.jpg" alt="3">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school2.jpg" alt="4">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school3.jpg" alt="5">
+            <img src="https://gghs-tahir-model.netlify.app/Images/school2.jpg" alt="1">
+            <img src="https://gghs-tahir-model.netlify.app/Images/school9.jpg" alt="2">
+            <img src="https://gghs-tahir-model.netlify.app/Images/school3.jpg" alt="3">
+            <img src="https://gghs-tahir-model.netlify.app/Images/school8.jpg" alt="4">
+            <img src="https://gghs-tahir-model.netlify.app/Images/school4.jpg" alt="5">
+            <img src="https://gghs-tahir-model.netlify.app/Images/school14.jpg" alt="6">
+            <img src="https://gghs-tahir-model.netlify.app/Images/school12.jpg" alt="7">
+        
         </div>
     </section>
 
@@ -390,17 +393,18 @@
 
         <!-- Leaflet Map Script -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-        var map = L.map('map').setView([31.5407, 74.3580], 13);  // Updated coordinates
-    
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-    
-        L.marker([31.5407, 74.3580]).addTo(map)  // Updated coordinates
-            .bindPopup("<b>Govt. Tahir Model Girls High School</b>")
-            .openPopup();
-    </script>
+<script>
+    var map = L.map('map').setView([31.5407, 74.3580], 13);  // Coordinates for Sheran Wali Park
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([31.5407, 74.3580]).addTo(map)
+        .bindPopup("<b>Govt. Tahir Model Girls High School</b>")
+        .openPopup();
+</script>
+
     <!-- Modal Image Viewer Script -->
     <script>
         const galleryImages = document.querySelectorAll('.gallery img');
