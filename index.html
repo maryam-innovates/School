@@ -17,12 +17,14 @@
             background-color: #f4f4f4;
             color: #333;
         }
+        /* Header Section */
         header {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
                 url('http://gghs-tahir-model.netlify.app/Images/school3.jpg') center/cover no-repeat;
             color: white;
             padding: 80px 0;
             text-align: center;
+            background-size: cover;
         }
         header h1 {
             font-size: 3.5rem;
@@ -66,19 +68,12 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
-        .academics {
+        .academics, .student-life {
             background-color: #fff;
         }
-        .academics h2 {
+        .academics h2, .student-life h2 {
+            font-size: 2.5rem;
             color: #007bff;
-            font-size: 2.5rem;
-        }
-        .student-life {
-            background-color: #f0f8ff;
-        }
-        .student-life h2 {
-            color: #28a745;
-            font-size: 2.5rem;
         }
         .gallery {
             background-color: #fff;
@@ -86,8 +81,18 @@
         }
         .gallery img {
             width: 100%;
+            max-width: 90%;
             height: auto;
             margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .contact {
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+        .contact h2 {
+            color: #28a745;
+            font-size: 2.5rem;
         }
         /* Footer */
         footer {
@@ -112,6 +117,36 @@
         }
         footer .social-icons i:hover {
             color: #007bff;
+        }
+        /* Quick Links */
+        .quick-links a {
+            display: inline-block;
+            margin: 5px 10px;
+        }
+        /* Add ::selection Styling */
+        ::selection {
+            background-color: #007bff;
+            color: white;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            header h1 {
+                font-size: 2.5rem;
+            }
+            .about-us h2, .academics h2, .student-life h2 {
+                font-size: 2rem;
+            }
+            .gallery img {
+                width: 100%;
+                max-width: 100%;
+            }
+            footer {
+                text-align: left;
+            }
         }
     </style>
 </head>
@@ -162,7 +197,7 @@
     </section>
 
     <!-- Contact Us Section -->
-    <section id="contact">
+    <section id="contact" class="contact">
         <h2>Contact Us</h2>
         <p>For more information, feel free to reach out to us.</p>
     </section>
@@ -170,11 +205,20 @@
     <!-- Footer Section -->
     <footer>
         <div class="quick-links">
-            <a href="#about">About Us</a>
-            <a href="#academics">Academics</a>
-            <a href="#student-life">Student Life</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact Us</a>
+            <a href="https://hed.punjab.gov.pk/">HED Punjab</a>
+            <a href="http://mis.hed.punjab.gov.pk/">HED MIS</a>
+            <a href="https://hed.punjab.gov.pk/colleges">Colleges HED</a>
+            <a href="https://www.punjab.gov.pk/hed">Punjab HED</a>
+            <a href="http://www.biselahore.com/">Bise Lahore</a>
+            <a href="http://www.bisefsd.edu.pk/">Bise Faisalabad</a>
+            <a href="https://gcu.edu.pk/">GC University</a>
+            <a href="https://bisesahiwal.edu.pk/">Bise Sahiwal</a>
+            <a href="http://www.bisegrw.edu.pk/">Bise GRW</a>
+            <a href="https://www.bisebwp.edu.pk/">Bise BWP</a>
+            <a href="http://biserawalpindi.edu.pk/">Bise Rawalpindi</a>
+            <a href="https://www.bisedgkhan.edu.pk/">Bise DG Khan</a>
+            <a href="http://www.bisesargodha.edu.pk/">Bise Sargodha</a>
+            <a href="http://www.lcwu.edu.pk/">LCWU</a>
         </div>
         <div class="social-icons">
             <i class="fab fa-facebook-f"></i>
