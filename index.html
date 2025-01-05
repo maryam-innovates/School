@@ -18,7 +18,6 @@
             color: #333;
         }
         /* Header Section */
-    
         header {
             background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
                 url('http://gghs-tahir-model.netlify.app/Images/school3.jpg') center/cover no-repeat;
@@ -36,20 +35,23 @@
             margin-top: 20px;
         }
         /* Navigation Bar */
-                nav {
-            background: rgba(0, 0, 0, 0.7); 
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
         }
         nav a {
-            transition: background-color 0.3s ease, color 0.3s ease;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 1rem;
         }
-        
         nav a:hover {
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 4px;
+            background-color: #575757;
+            border-radius: 5px;
         }
-
         /* Sections */
         section {
             padding: 50px 20px;
@@ -76,14 +78,14 @@
         .gallery {
             background-color: #fff;
             text-align: center;
-                }
-               .gallery img {
+        }
+        .gallery img {
+            width: 100%;
             max-width: 90%;
             height: auto;
             margin-bottom: 20px;
-            border-radius: 8px; 
+            border-radius: 8px;
         }
-        
         .contact {
             background-color: #f0f8ff;
             text-align: center;
@@ -125,32 +127,27 @@
         ::selection {
             background-color: #007bff;
             color: white;
-                }
-            @media (max-width: 768px) {
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
             header h1 {
-                font-size: 2.5rem; /* Smaller heading */
+                font-size: 2.5rem;
             }
-        
-            nav {
-                text-align: left;
-                padding: 10px;
+            .about-us h2, .academics h2, .student-life h2 {
+                font-size: 2rem;
             }
-        
             .gallery img {
                 width: 100%;
-                max-width: 100%; /* Full width on small screens */
+                max-width: 100%;
             }
-        
-            footer .quick-links a {
-                display: block; /* Stack the links for small screens */
-                margin-bottom: 10px;
+            footer {
+                text-align: left;
             }
         }
-            ::selection {
-        background-color: #007bff;  /* Custom color */
-        color: white;
-    }
-
     </style>
 </head>
 <body>
@@ -206,22 +203,22 @@
     </section>
 
     <!-- Footer Section -->
-  <footer>
-    <div class="quick-links">
-        <a href="https://hed.punjab.gov.pk/">HED Punjab</a>
-        <a href="http://mis.hed.punjab.gov.pk/">HED MIS</a>
-        <a href="https://hed.punjab.gov.pk/colleges">Colleges HED</a>
-        <a href="https://www.punjab.gov.pk/hed">Punjab HED</a>
-        <a href="http://www.biselahore.com/">Bise Lahore</a>
-        <a href="http://www.bisefsd.edu.pk/">Bise Faisalabad</a>
-        <a href="https://gcu.edu.pk/">GC University</a>
-        <a href="https://bisesahiwal.edu.pk/">Bise Sahiwal</a>
-        <a href="http://www.bisegrw.edu.pk/">Bise GRW</a>
-        <a href="https://www.bisebwp.edu.pk/">Bise BWP</a>
-        <a href="http://biserawalpindi.edu.pk/">Bise Rawalpindi</a>
-        <a href="https://www.bisedgkhan.edu.pk/">Bise DG Khan</a>
-        <a href="http://www.bisesargodha.edu.pk/">Bise Sargodha</a>
-        <a href="http://www.lcwu.edu.pk/">LCWU</a>
+    <footer>
+        <div class="quick-links">
+            <a href="https://hed.punjab.gov.pk/">HED Punjab</a>
+            <a href="http://mis.hed.punjab.gov.pk/">HED MIS</a>
+            <a href="https://hed.punjab.gov.pk/colleges">Colleges HED</a>
+            <a href="https://www.punjab.gov.pk/hed">Punjab HED</a>
+            <a href="http://www.biselahore.com/">Bise Lahore</a>
+            <a href="http://www.bisefsd.edu.pk/">Bise Faisalabad</a>
+            <a href="https://gcu.edu.pk/">GC University</a>
+            <a href="https://bisesahiwal.edu.pk/">Bise Sahiwal</a>
+            <a href="http://www.bisegrw.edu.pk/">Bise GRW</a>
+            <a href="https://www.bisebwp.edu.pk/">Bise BWP</a>
+            <a href="http://biserawalpindi.edu.pk/">Bise Rawalpindi</a>
+            <a href="https://www.bisedgkhan.edu.pk/">Bise DG Khan</a>
+            <a href="http://www.bisesargodha.edu.pk/">Bise Sargodha</a>
+            <a href="http://www.lcwu.edu.pk/">LCWU</a>
         </div>
         <div class="social-icons">
             <i class="fab fa-facebook-f"></i>
