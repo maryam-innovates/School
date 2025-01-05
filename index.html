@@ -6,11 +6,7 @@
     <title>Govt. Tahir Model Girls High School</title>
     <link href="https://fonts.googleapis.com/css2?family=FONT_NAME:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <style>
-        #map {
-            height: 400px;
-            width: 100%;
-        }
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         /* General Reset */
         * {
@@ -33,7 +29,7 @@
             text-align: center;
             background-size: cover;
         }
-                header h1 {
+         header h1 {
           font-family: 'FONT_NAME', sans-serif;
           font-weight: bold;
           font-size: 3.5rem;
@@ -89,12 +85,12 @@
             background-color: #fff;
             text-align: center;
         }
-               .gallery img {
+        .gallery img {
           width: 100%;
           height: auto;
-          max-width: 600px; /* Adjust as needed */
+          max-width: 600px; 
           margin-bottom: 20px;
-}
+     }
         .contact {
             background-color: #f0f8ff;
             text-align: center;
@@ -104,59 +100,115 @@
             font-size: 2.5rem;
         }
        /* Footer Styles */
-        footer {
-            background-color: #343a40;
-            color: white;
-            padding: 20px;
-            text-align: center;
+               footer {
+          background-color: #222;
+          color: #fff;
+          padding: 20px 0;
         }
-
-        .quick-links {
-            list-style-type: none;
-            padding: 0;
+        
+        .footer-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 20px;
         }
-
-        .quick-links li {
-            display: inline-block;
-            margin: 10px 20px;
+        
+        .footer-section {
+          flex: 1 1 300px;
+          margin: 10px;
+          text-align: center;
         }
-
+        
+        h3 {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+        
+        .social-icons a {
+          color: #fff;
+          margin: 0 10px;
+          font-size: 20px;
+          text-decoration: none;
+        }
+        
+        .social-icons a:hover {
+          color: #00bcd4;
+        }
+        
         .quick-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
+          display: block;
+          color: #fff;
+          text-decoration: none;
+          margin-bottom: 5px;
+          word-wrap: break-word;
         }
-
+        
         .quick-links a:hover {
-            color: #f8d7da;
+          color: #00bcd4;
         }
-
-        /* Responsive Footer */
+        
+        .footer-bottom {
+          text-align: center;
+          background-color: #111;
+          padding: 10px;
+        }
+        
+        .footer-bottom p {
+          margin: 0;
+          font-size: 14px;
+        }
+        
         @media (max-width: 768px) {
-            .quick-links li {
-                display: block;
-                margin: 10px 0;
-            }
-        }
+          .footer-container {
+            flex-direction: column;
+            text-align: center;
+          }
+}
     
     /* Media Queries for Responsiveness */
     @media (max-width: 768px) {
-        .footer-content {
-            flex-direction: column;
-            align-items: center;
-        }
-    
+    /* Responsive Footer */
+@media (max-width: 768px) {
+    .quick-links a {
+        display: block; /* Ensure links stack vertically on small screens */
+        margin: 10px 0;
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center align content */
+    }
+
+    .footer-section {
+        margin-bottom: 20px; /* Add spacing between sections */
+    }
+
+    h3 {
+        text-align: center;
+    }
+}
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
         .footer-logo h3 {
             text-align: center;
             margin-bottom: 20px;
         }
     }
-        /* Quick Links */
-        .quick-links a {
-            display: inline-block;
-            margin: 5px 10px;
-        }
+    
+    /* Quick Links */
+    .quick-links a {
+        display: inline-block;
+        margin: 5px 10px;
+        text-decoration: none; /* Remove underline */
+        color: #fff;
+    }
+    
+    .quick-links a:hover {
+        color: #00bcd4; /* Add hover effect */
+    }
         /* Add ::selection Styling */
         ::selection {
             background-color: green;
@@ -176,9 +228,94 @@
             }
             .gallery img {
                 width: 100%;
-                max-width: 100%;
+              max-width: 100%;
             }
         }
+         #map {
+            height: 400px;
+            width: 100%;
+        }
+
+             .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center; /* Center images on smaller screens */
+        }
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+        }
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .overlay .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .overlay .nav-btn {
+            position: absolute;
+            top: 50%;
+            font-size: 30px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .overlay .nav-left {
+            left: 10px;
+            transform: translateY(-50%);
+        }
+        .overlay .nav-right {
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
+            @media (max-width: 480px) {
+        /* Reduce the font size of header titles for smaller screens */
+        header h1 {
+            font-size: 18px; /* Ensures the header is readable but fits the screen */
+        }
+    
+        /* Adjust the gallery image size for small screens */
+        .gallery img {
+            width: 80px;
+            height: 80px; /* Makes the images smaller to fit more in the viewport */
+        }
+    
+        /* Adjust spacing in sections for better readability */
+        section {
+            margin: 5px;   /* Reduce the margin for compact spacing */
+            padding: 10px; /* Ensure enough padding inside the section */
+        }
+    }
     </style>
 </head>
 <body>
@@ -233,40 +370,42 @@
         <p>For more information, feel free to reach out to us.</p>
     </section>
      <div id="map"></div>
+     <div class="overlay" id="overlay">
+        <button class="nav-btn nav-left" id="prevBtn">&lt;</button>
+        <img src="" alt="" id="overlay-img">
+        <button class="nav-btn nav-right" id="nextBtn">&gt;</button>
+        <span class="close" id="close">&times;</span>
+    </div>
     <!-- Footer Section -->
     <footer>
-       <footer>
- <footer>
-    <div class="footer-content">
-        <div class="footer-logo">
-            <h3>Your School</h3>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>GGHS-Tahir-Model</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+          </div>
         </div>
-        <div class="footer-links">
-            <ul>
-                <li><a href="https://hed.punjab.gov.pk/">Higher Education Department Punjab</a></li>
-                <li><a href="http://mis.hed.punjab.gov.pk/">Management Information System</a></li>
-                <li><a href="https://hed.punjab.gov.pk/colleges">Colleges in Punjab</a></li>
-                <li><a href="https://www.punjab.gov.pk/hed">Punjab Government Higher Education</a></li>
-                <li><a href="http://www.biselahore.com/">Board of Intermediate and Secondary Education Lahore</a></li>
-                <li><a href="http://www.bisefsd.edu.pk/">Board of Intermediate and Secondary Education Faisalabad</a></li>
-                <li><a href="https://gcu.edu.pk/">Government College University Lahore</a></li>
-                <li><a href="https://bisesahiwal.edu.pk/">Board of Intermediate and Secondary Education Sahiwal</a></li>
-                <li><a href="http://www.bisegrw.edu.pk/">Board of Intermediate and Secondary Education Gujranwala</a></li>
-                <li><a href="https://www.bisebwp.edu.pk/">Board of Intermediate and Secondary Education Bahawalpur</a></li>
-                <li><a href="http://biserawalpindi.edu.pk/">Board of Intermediate and Secondary Education Rawalpindi</a></li>
-                <li><a href="https://www.bisedgkhan.edu.pk/">Board of Intermediate and Secondary Education Dera Ghazi Khan</a></li>
-                <li><a href="http://www.bisesargodha.edu.pk/">Board of Intermediate and Secondary Education Sargodha</a></li>
-                <li><a href="http://www.lcwu.edu.pk/">Lahore College for Women University</a></li>
-            </ul>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <div class="quick-links">
+            <a href="http://hed.punjab.gov.pk/colleges">http://hed.punjab.gov.pk/colleges</a>
+            <a href="http://biserawalpindi.edu.pk/">http://biserawalpindi.edu.pk/</a>
+            <a href="http://www.bisegrw.edu.pk/">http://www.bisegrw.edu.pk/</a>
+            <a href="https://bisesahiwal.edu.pk/">https://bisesahiwal.edu.pk/</a>
+            <a href="https://bisebwp.edu.pk/">https://bisebwp.edu.pk/</a>
+            <a href="https://bisefsd.edu.pk/">https://bisefsd.edu.pk/</a>
+            <a href="http://biselahore.com/">http://biselahore.com/</a>
+            <a href="http://lcwu.edu.pk/">http://lcwu.edu.pk/</a>
+            <a href="http://www.gcuf.edu.pk/">http://www.gcuf.edu.pk/</a>
+          </div>
         </div>
-        <div class="social-icons">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-        </div>
-        <p>&copy; 2025 Govt. Tahir Model Girls High School</p>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2021 GGHS-Tahir-Model. All Rights Reserved.</p>
     </footer>
-    
     <!-- Font Awesome Icons (for social media) -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
              <!-- Leaflet JS -->
@@ -285,7 +424,58 @@
         L.marker([31.5323, 74.3637]).addTo(map)
             .bindPopup('<b>Welcome to Sheran Wali Park!</b><br>Shalamar Town, Lahore.')
             .openPopup();
-    </script>
 
+            
+      const images = document.querySelectorAll('.gallery img');
+      const overlay = document.getElementById('overlay');
+      const overlayImg = document.getElementById('overlay-img');
+      const close = document.getElementById('close');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      let currentIndex = 0;
+    
+      // Function to show the overlay with the clicked image
+      function showImage(index) {
+        overlayImg.src = images[index].src;
+        overlay.style.display = 'flex';
+        currentIndex = index;
+      }
+    
+      // Event listener for clicking on gallery images
+      images.forEach((img, index) => {
+        img.addEventListener('click', () => {
+          showImage(index);
+        });
+      });
+    
+      // Event listener for clicking the close button
+      close.addEventListener('click', () => {
+        overlay.style.display = 'none';
+        overlayImg.src = '';
+      });
+    
+      // Event listener for clicking outside the image to close
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.style.display = 'none';
+          overlayImg.src = '';
+        }
+      });
+    
+      // Event listeners for navigation buttons
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      });
+    
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      });
+    
+      // Smooth transitions for overlay
+      overlay.style.transition = 'opacity 0.3s ease-in-out';
+      overlayImg.style.transition = 'transform 0.3s ease-in-out';
+    </script>
 </body>
 </html>
