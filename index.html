@@ -388,20 +388,19 @@
         <button class="nav-btn nav-right">&#10095;</button>
     </div>
 
-    <!-- Leaflet Map Script -->
+        <!-- Leaflet Map Script -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-        var map = L.map('map').setView([31.5497, 74.3436], 13);
-
+        var map = L.map('map').setView([31.5407, 74.3580], 13);  // Updated coordinates
+    
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-
-        L.marker([31.5497, 74.3436]).addTo(map)
+    
+        L.marker([31.5407, 74.3580]).addTo(map)  // Updated coordinates
             .bindPopup("<b>Govt. Tahir Model Girls High School</b>")
             .openPopup();
     </script>
-
     <!-- Modal Image Viewer Script -->
     <script>
         const galleryImages = document.querySelectorAll('.gallery img');
