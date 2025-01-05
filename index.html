@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Govt. Tahir Model Girls High School</title>
     <link href="https://fonts.googleapis.com/css2?family=FONT_NAME:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
     <style>
         /* General Reset */
         * {
@@ -27,12 +33,12 @@
             text-align: center;
             background-size: cover;
         }
-            header h1 {
-      font-family: 'FONT_NAME', sans-serif;
-      font-weight: bold;
-      font-size: 3.5rem;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    }
+                header h1 {
+          font-family: 'FONT_NAME', sans-serif;
+          font-weight: bold;
+          font-size: 3.5rem;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
 
         header p {
             font-size: 1.2rem;
@@ -97,46 +103,42 @@
             color: #28a745;
             font-size: 2.5rem;
         }
-        /* Footer Section */
-    footer {
-        background-color: #333;
-        color: white;
-        padding: 40px 20px;
-    }
-    
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        gap: 20px;
-    }
-    
-    .footer-logo h3 {
-        font-size: 2.5rem;
-        color: white;
-        margin-bottom: 10px;
-    }
-    
-    .footer-links ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    
-    .footer-links li {
-        margin: 10px 0;
-    }
-    
-    .footer-links a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.1rem;
-        transition: color 0.3s ease;
-    }
-    
-    .footer-links a:hover {
-        color: #f4f4f4;
-    }
+       /* Footer Styles */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .quick-links {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .quick-links li {
+            display: inline-block;
+            margin: 10px 20px;
+        }
+
+        .quick-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .quick-links a:hover {
+            color: #f8d7da;
+        }
+
+        /* Responsive Footer */
+        @media (max-width: 768px) {
+            .quick-links li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
     
     /* Media Queries for Responsiveness */
     @media (max-width: 768px) {
@@ -149,15 +151,6 @@
             text-align: center;
             margin-bottom: 20px;
         }
-    
-        .footer-links ul {
-            text-align: center;
-        }
-    
-        .footer-links li {
-            font-size: 1rem;
-            margin: 5px 0;
-        }
     }
         /* Quick Links */
         .quick-links a {
@@ -166,7 +159,7 @@
         }
         /* Add ::selection Styling */
         ::selection {
-            background-color: #007bff;
+            background-color: green;
             color: white;
         }
         /* Responsive Design */
@@ -239,22 +232,7 @@
         <h2>Contact Us</h2>
         <p>For more information, feel free to reach out to us.</p>
     </section>
-    <div id="map" style="height: 400px; width: 100%;"></div>
-    <script>
-      function initMap() {
-        var location = {lat: 31.5497, lng: 74.3436}; // Coordinates for Lahore, Punjab
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: location
-        });
-        var marker = new google.maps.Marker({
-          position: location,
-          map: map
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-
+     <div id="map"></div>
     <!-- Footer Section -->
     <footer>
        <footer>
@@ -291,5 +269,23 @@
     
     <!-- Font Awesome Icons (for social media) -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+             <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([31.5323, 74.3637], 13); // Coordinates of Sheran Wali Park, Lahore
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add a marker to the map
+        L.marker([31.5323, 74.3637]).addTo(map)
+            .bindPopup('<b>Welcome to Sheran Wali Park!</b><br>Shalamar Town, Lahore.')
+            .openPopup();
+    </script>
+
 </body>
 </html>
