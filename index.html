@@ -97,30 +97,68 @@
             color: #28a745;
             font-size: 2.5rem;
         }
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 30px 0;
+        /* Footer Section */
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 40px 20px;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .footer-logo h3 {
+        font-size: 2.5rem;
+        color: white;
+        margin-bottom: 10px;
+    }
+    
+    .footer-links ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .footer-links li {
+        margin: 10px 0;
+    }
+    
+    .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+        color: #f4f4f4;
+    }
+    
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .footer-logo h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        .footer-links ul {
             text-align: center;
         }
-        footer a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
+    
+        .footer-links li {
             font-size: 1rem;
+            margin: 5px 0;
         }
-        footer a:hover {
-            color: #007bff;
-        }
-        footer .social-icons i {
-            font-size: 1.5rem;
-            margin: 0 15px;
-            color: white;
-        }
-        footer .social-icons i:hover {
-            color: #007bff;
-        }
+    }
         /* Quick Links */
         .quick-links a {
             display: inline-block;
@@ -146,9 +184,6 @@
             .gallery img {
                 width: 100%;
                 max-width: 100%;
-            }
-            footer {
-                text-align: left;
             }
         }
     </style>
@@ -223,22 +258,29 @@
     <!-- Footer Section -->
     <footer>
        <footer>
-  <div class="quick-links">
-    <a href="https://hed.punjab.gov.pk/">Higher Education Department Punjab</a>
-    <a href="http://mis.hed.punjab.gov.pk/">Management Information System</a>
-    <a href="https://hed.punjab.gov.pk/colleges">Colleges in Punjab</a>
-    <a href="https://www.punjab.gov.pk/hed">Punjab Government Higher Education</a>
-    <a href="http://www.biselahore.com/">Board of Intermediate and Secondary Education Lahore</a>
-    <a href="http://www.bisefsd.edu.pk/">Board of Intermediate and Secondary Education Faisalabad</a>
-    <a href="https://gcu.edu.pk/">Government College University Lahore</a>
-    <a href="https://bisesahiwal.edu.pk/">Board of Intermediate and Secondary Education Sahiwal</a>
-    <a href="http://www.bisegrw.edu.pk/">Board of Intermediate and Secondary Education Gujranwala</a>
-    <a href="https://www.bisebwp.edu.pk/">Board of Intermediate and Secondary Education Bahawalpur</a>
-    <a href="http://biserawalpindi.edu.pk/">Board of Intermediate and Secondary Education Rawalpindi</a>
-    <a href="https://www.bisedgkhan.edu.pk/">Board of Intermediate and Secondary Education Dera Ghazi Khan</a>
-    <a href="http://www.bisesargodha.edu.pk/">Board of Intermediate and Secondary Education Sargodha</a>
-    <a href="http://www.lcwu.edu.pk/">Lahore College for Women University</a>
-  </div>
+ <footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <h3>Your School</h3>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="https://hed.punjab.gov.pk/">Higher Education Department Punjab</a></li>
+                <li><a href="http://mis.hed.punjab.gov.pk/">Management Information System</a></li>
+                <li><a href="https://hed.punjab.gov.pk/colleges">Colleges in Punjab</a></li>
+                <li><a href="https://www.punjab.gov.pk/hed">Punjab Government Higher Education</a></li>
+                <li><a href="http://www.biselahore.com/">Board of Intermediate and Secondary Education Lahore</a></li>
+                <li><a href="http://www.bisefsd.edu.pk/">Board of Intermediate and Secondary Education Faisalabad</a></li>
+                <li><a href="https://gcu.edu.pk/">Government College University Lahore</a></li>
+                <li><a href="https://bisesahiwal.edu.pk/">Board of Intermediate and Secondary Education Sahiwal</a></li>
+                <li><a href="http://www.bisegrw.edu.pk/">Board of Intermediate and Secondary Education Gujranwala</a></li>
+                <li><a href="https://www.bisebwp.edu.pk/">Board of Intermediate and Secondary Education Bahawalpur</a></li>
+                <li><a href="http://biserawalpindi.edu.pk/">Board of Intermediate and Secondary Education Rawalpindi</a></li>
+                <li><a href="https://www.bisedgkhan.edu.pk/">Board of Intermediate and Secondary Education Dera Ghazi Khan</a></li>
+                <li><a href="http://www.bisesargodha.edu.pk/">Board of Intermediate and Secondary Education Sargodha</a></li>
+                <li><a href="http://www.lcwu.edu.pk/">Lahore College for Women University</a></li>
+            </ul>
+        </div>
         <div class="social-icons">
             <i class="fab fa-facebook-f"></i>
             <i class="fab fa-twitter"></i>
