@@ -363,6 +363,13 @@
         <img src="http://gghs-tahir-model.netlify.app/Images/school9.jpg" alt="School Image">
         <img src="http://gghs-tahir-model.netlify.app/Images/school6.jpg" alt="School Image">
     </section>
+    
+       <div class="overlay" id="overlay">
+        <button class="nav-btn nav-left" id="prevBtn">&lt;</button>
+        <img src="" alt="" id="overlay-img">
+        <button class="nav-btn nav-right" id="nextBtn">&gt;</button>
+        <span class="close" id="close">&times;</span>
+    </div>
 
     <!-- Contact Us Section -->
     <section id="contact" class="contact">
@@ -370,12 +377,6 @@
         <p>For more information, feel free to reach out to us.</p>
     </section>
      <div id="map"></div>
-     <div class="overlay" id="overlay">
-        <button class="nav-btn nav-left" id="prevBtn">&lt;</button>
-        <img src="" alt="" id="overlay-img">
-        <button class="nav-btn nav-right" id="nextBtn">&gt;</button>
-        <span class="close" id="close">&times;</span>
-    </div>
     <!-- Footer Section -->
     <footer>
       <div class="footer-container">
@@ -425,7 +426,9 @@
             .bindPopup('<b>Welcome to Sheran Wali Park!</b><br>Shalamar Town, Lahore.')
             .openPopup();
 
-            
+        }
+    </script>
+        <script>
       const images = document.querySelectorAll('.gallery img');
       const overlay = document.getElementById('overlay');
       const overlayImg = document.getElementById('overlay-img');
