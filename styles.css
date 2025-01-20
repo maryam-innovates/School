@@ -5,158 +5,70 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f0f2f5;
-    color: #333;
 }
 
-/* Header Section */
 header {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('https://gghs-tahir-model.netlify.app/Images/school3.jpg') center/cover no-repeat;
-    color: white;
-    padding: 100px 0;
-    text-align: center;
-    background-size: cover;
-    position: relative;
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-    margin-bottom: 20px;
+header .logo img {
+    width: 50px;
+    height: 50px;
 }
 
-header p {
-    font-size: 1.2rem;
-    margin-top: 20px;
+nav ul {
+    list-style-type: none;
 }
 
-/* Navigation Bar */
-nav {
-    background-color: #333;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1rem;
+nav ul li {
+    display: inline-block;
     margin: 0 15px;
 }
 
-nav a:hover {
-    background-color: #5a5a5a;
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+section {
+    padding: 20px;
+}
+
+#programs .programs {
+    display: flex;
+    gap: 20px;
+}
+
+.program-card {
+    background-color: #f4f4f4;
+    padding: 15px;
+    width: 30%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery-images img {
+    width: 100%;
+    height: auto;
     border-radius: 5px;
 }
 
-/* Section Styles */
-section {
-    padding: 50px 20px;
-    margin-bottom: 30px;
-    background-color: white;
-}
-
-section h2 {
-    font-size: 2.5rem;
-    color: #007bff;
-    margin-bottom: 20px;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0;
-    font-size: 1.2rem;
-}
-
-ul li {
-    margin: 10px 0;
-}
-
-/* Gallery Section */
-.gallery img {
-    width: 100%;
-    height: auto;
-    max-width: 600px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* Contact Section */
-.contact {
-    background-color: #f0f8ff;
-    text-align: center;
-}
-
-.contact h2 {
-    color: #28a745;
-    font-size: 2.5rem;
-}
-
-/* Footer Styles */
 footer {
-    background-color: #222;
+    background-color: #1a1a1a;
     color: #fff;
-    padding: 30px 0;
-}
-
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.footer-section {
-    flex: 1;
-    margin: 10px;
     text-align: center;
-}
-
-.footer-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.footer-section a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    margin: 5px 0;
-    display: block;
-}
-
-.footer-section a:hover {
-    color: #00bcd4;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav {
-        padding: 10px 0;
-    }
-
-    nav a {
-        padding: 10px 15px;
-        margin: 5px;
-    }
-
-    header h1 {
-        font-size: 2.5rem;
-    }
+    padding: 10px;
 }
