@@ -1,139 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Govt. Tahir Model Girls High School</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Govt. Tahir Model Girls High School</title>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>Govt. Tahir Model Girls High School</h1>
-        <p>Empowering young minds with quality education and leadership skills.</p>
-    </header>
-
-    <!-- Navigation Bar -->
+  <header>
     <nav>
-        <a href="#about-us">About Us</a>
-        <a href="#academics">Academics</a>
-        <a href="#student-life">Student Life</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#faculty">Faculty</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- About Us Section -->
-    <section id="about-us">
-        <h2>About Us</h2>
-        <p>Govt. Tahir Model Girls High School is dedicated to nurturing young girls into leaders through academic excellence and holistic development. Located in Shalimar Town, Lahore, we aim to provide an empowering educational experience.</p>
-    </section>
+  <section id="home" class="section">
+    <h1>Welcome to Our School</h1>
+    <p>Insert an introductory paragraph here.</p>
+  </section>
 
-    <!-- Academics Section -->
-    <section id="academics">
-        <h2>Academics</h2>
-        <ul>
-            <li>Science</li>
-            <li>Mathematics</li>
-            <li>Social Studies</li>
-            <li>Urdu</li>
-            <li>Islamic Studies</li>
-        </ul>
-        <p>Our curriculum is designed to prepare students for board exams while encouraging creativity and problem-solving skills.</p>
-    </section>
+  <section id="programs" class="section">
+    <h2>Our Programs</h2>
+    <p>Details about the programs offered.</p>
+  </section>
 
-    <!-- Student Life Section -->
-    <section id="student-life">
-        <h2>Student Life</h2>
-        <p>We offer a variety of extracurricular activities to enrich the learning experience, including sports, cultural events, and clubs.</p>
-    </section>
+  <section id="faculty" class="section">
+    <h2>Our Faculty</h2>
+    <p>Details about the faculty members.</p>
+  </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-images">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school2.jpg" alt="1">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school9.jpg" alt="2">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school3.jpg" alt="3">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school8.jpg" alt="4">
-        </div>
-    </section>
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <form action="#" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Phone: 03004217066</p>
-    </section>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3398.295838353505!2d74.3817037!3d31.5983525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b0b0a7e1fab%3A0xe9f084519d6c214a!2sGGHS%20Tahir%20Model%20Gulshan%20E%20Shalimar!5e0!3m2!1sen!2s!4v1737399080714!5m2!1sen!2s"
-    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Academics</a>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">Instagram</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Govt. Tahir Model Girls High School. All Rights Reserved.</p>
-        </div>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Your School Name | All rights reserved.</p>
+  </footer>
 
-    <!-- Modal Image Viewer Script -->
-    <script>
-        const galleryImages = document.querySelectorAll('.gallery img');
-        const overlay = document.querySelector('.overlay');
-        const overlayImage = overlay.querySelector('img');
-        const closeBtn = overlay.querySelector('.close');
-        const navLeft = overlay.querySelector('.nav-left');
-        const navRight = overlay.querySelector('.nav-right');
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
 
-        galleryImages.forEach((image, index) => {
-            image.addEventListener('click', () => {
-                overlay.style.display = 'flex';
-                overlayImage.src = image.src;
-                overlayImage.alt = image.alt;
-                overlayImage.dataset.index = index;
-            });
-        });
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
 
-        closeBtn.addEventListener('click', () => {
-            overlay.style.display = 'none';
-        });
+nav ul {
+  list-style: none;
+  padding: 0;
+}
 
-        navLeft.addEventListener('click', () => {
-            let currentIndex = parseInt(overlayImage.dataset.index);
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = galleryImages.length - 1;
-            }
-            overlayImage.src = galleryImages[currentIndex].src;
-            overlayImage.alt = galleryImages[currentIndex].alt;
-            overlayImage.dataset.index = currentIndex;
-        });
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
 
-        navRight.addEventListener('click', () => {
-            let currentIndex = parseInt(overlayImage.dataset.index);
-            if (currentIndex < galleryImages.length - 1) {
-                currentIndex++;
-            } else {
-                currentIndex = 0;
-            }
-            overlayImage.src = galleryImages[currentIndex].src;
-            overlayImage.alt = galleryImages[currentIndex].alt;
-            overlayImage.dataset.index = currentIndex;
-        });
-    </script>
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+section {
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 10px;
+}
+
+form input, form textarea {
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+    </style>
 </body>
 </html>
