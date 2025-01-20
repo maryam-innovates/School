@@ -72,8 +72,10 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-          <div id="map"></div>
-        
+<!--           <div id="map"></div>
+         -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3398.2924268801708!2d74.3816909!3d31.598446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b0b0a7e1fab%3A0xe9f084519d6c214a!2sGGHS%20Tahir%20Model%20Gulshan%20E%20Shalimar!5e0!3m2!1sen!2s!4v1737396998685!5m2!1sen!2s" 
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <h2>Contact Us</h2>
         <p>Phone: 03004217066</p>
       <p>This contact number can be used for admissions, academic queries, or general information about the school.</p>
@@ -113,21 +115,6 @@
     </div>
 
         <!-- Leaflet Map Script -->
- <script>
-        mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN'; // Replace with your Mapbox access token
-        const map = new mapboxgl.Map({
-            container: 'map', // ID of the container
-            style: 'mapbox://styles/mapbox/streets-v11', // Map style
-            center: [74.3587, 31.5204], // Longitude, Latitude
-            zoom: 15 // Initial zoom level
-        });
-
-        // Add a marker
-        new mapboxgl.Marker()
-            .setLngLat([74.3587, 31.5204]) // Longitude, Latitude
-            .setPopup(new mapboxgl.Popup().setText('Sheran Wali Park')) // Popup text
-            .addTo(map);
-    </script>
 
     <!-- Modal Image Viewer Script -->
     <script>
