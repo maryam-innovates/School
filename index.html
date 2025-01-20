@@ -4,9 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Govt. Tahir Model Girls High School</title>
-    <link href="https://fonts.googleapis.com/css2?family=FONT_NAME:wght@700&display=swap" rel="stylesheet">
-    <link rel ="stylesheet" href ="styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset and Box Model */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('https://gghs-tahir-model.netlify.app/Images/school3.jpg') center/cover no-repeat;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-weight: bold;
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+        nav a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 20px;
+            margin-bottom: 30px;
+        }
+        .about-us, .academics, .student-life, .gallery, .contact {
+            background-color: #fff;
+        }
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        section p, section li {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            text-align: center;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+        .contact h2 {
+            color: #28a745;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .footer-section h3 {
+            margin-bottom: 10px;
+        }
+        .quick-links a, .social-icons a {
+            color: white;
+            display: block;
+            margin: 5px 0;
+            text-decoration: none;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Modal Image Viewer */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .overlay img {
+            max-width: 90%;
+            max-height: 80%;
+        }
+        .overlay .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .overlay .nav-btn {
+            position: absolute;
+            top: 50%;
+            font-size: 2rem;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .overlay .nav-left {
+            left: 20px;
+        }
+        .overlay .nav-right {
+            right: 20px;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -25,61 +182,13 @@
     </nav>
 
     <!-- About Us Section -->
-    <section id="about-us" class="about-us">
+    <section id="about-us">
         <h2>About Us</h2>
-        <p>Govt. Tahir Model Girls High School is a public educational institution located in Shalimar Town, Lahore, 
-        Punjab, Pakistan. The school is dedicated to providing quality education to female students and operates 
-       under the Lahore Board. The institution aims to empower young girls through education, fostering an environment 
-       conducive to learning and personal growth.   
-    </p>
+        <p>Govt. Tahir Model Girls High School is a public educational institution located in Shalimar Town, Lahore, Punjab, Pakistan...</p>
     </section>
 
-    <!-- Academics Section -->
-    <section id="academics" class="academics">
-        <h2>Academics</h2>
-        <p>The school offers a comprehensive curriculum designed to meet the educational needs of its students.</p>
-           <li>Science</li> 
-            <li>Mathematics</li>
-            <li>Social Studies</li>
-            <li>Urdu</li>
-            <li>Islamic Studies</li>
- <p>The school emphasizes academic excellence and prepares students for board examinations.</p>
-    </section>
-
-    <!-- Student Life Section -->
-    <section id="student-life" class="student-life">
-        <h2>Student Life</h2>
-        <p>Student life at Govt. Tahir Model Girls High School is enriched with various activities aimed at holistic development.</p>
-        <li>Cultural Events: Celebrations of national days and cultural festivals.</li>
-        <li>Sports: Participation in various sports, although specific facilities may be limited.</li> 
-        <li>Clubs and Societies: Opportunities for students to engage in clubs that promote leadership and teamwork.</li>
-      <p>The school environment encourages students to develop their skills and interests outside of the classroom.</p>
-      </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-images">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school2.jpg" alt="1">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school9.jpg" alt="2">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school3.jpg" alt="3">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school8.jpg" alt="4">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school4.jpg" alt="5">
-            <img src="https://gghs-tahir-model.netlify.app/Images/school1.jpg" alt="6">
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-<!--           <div id="map"></div>
-         -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3398.295838353505!2d74.3817037!3d31.5983525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b0b0a7e1fab%3A0xe9f084519d6c214a!2sGGHS%20Tahir%20Model%20Gulshan%20E%20Shalimar!5e0!3m2!1sen!2s!4v1737399080714!5m2!1sen!2s"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        
-        <h2>Contact Us</h2>
-        <p>Phone: 03004217066</p>
-      <p>This contact number can be used for admissions, academic queries, or general information about the school.</p>
-    </section>
+    <!-- Other Sections -->
+    <!-- Repeat same structure as needed -->
 
     <!-- Footer -->
     <footer>
@@ -105,62 +214,5 @@
             <p>&copy; 2025 Govt. Tahir Model Girls High School. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <!-- Modal Image Viewer -->
-    <div class="overlay">
-        <img src="" alt="">
-        <span class="close">&times;</span>
-        <button class="nav-btn nav-left">&#10094;</button>
-        <button class="nav-btn nav-right">&#10095;</button>
-    </div>
-
-        <!-- Leaflet Map Script -->
-
-    <!-- Modal Image Viewer Script -->
-    <script>
-        const galleryImages = document.querySelectorAll('.gallery img');
-        const overlay = document.querySelector('.overlay');
-        const overlayImage = overlay.querySelector('img');
-        const closeBtn = overlay.querySelector('.close');
-        const navLeft = overlay.querySelector('.nav-left');
-        const navRight = overlay.querySelector('.nav-right');
-
-        galleryImages.forEach((image, index) => {
-            image.addEventListener('click', () => {
-                overlay.style.display = 'flex';
-                overlayImage.src = image.src;
-                overlayImage.alt = image.alt;
-                overlayImage.dataset.index = index;
-            });
-        });
-
-        closeBtn.addEventListener('click', () => {
-            overlay.style.display = 'none';
-        });
-
-        navLeft.addEventListener('click', () => {
-            let currentIndex = parseInt(overlayImage.dataset.index);
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = galleryImages.length - 1;
-            }
-            overlayImage.src = galleryImages[currentIndex].src;
-            overlayImage.alt = galleryImages[currentIndex].alt;
-            overlayImage.dataset.index = currentIndex;
-        });
-
-        navRight.addEventListener('click', () => {
-            let currentIndex = parseInt(overlayImage.dataset.index);
-            if (currentIndex < galleryImages.length - 1) {
-                currentIndex++;
-            } else {
-                currentIndex = 0;
-            }
-            overlayImage.src = galleryImages[currentIndex].src;
-            overlayImage.alt = galleryImages[currentIndex].alt;
-            overlayImage.dataset.index = currentIndex;
-        });
-    </script>
 </body>
 </html>
