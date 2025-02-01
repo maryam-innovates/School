@@ -1,74 +1,667 @@
-* {
+/* General Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
+} 
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
+/* Header Styles */
 header {
-    background-color: #1a1a1a;
-    padding: 10px 20px;
-    color: #fff;
+    background-color: #003366; /* Your main header background color */
+    color: white;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo Section */
+header .logo {
+    display: flex;
     align-items: center;
 }
 
 header .logo img {
-    width: 50px;
-    height: 50px;
+    height: 50px; /* Adjust size for your logo */
+    margin-right: 15px;
 }
 
-nav ul {
-    list-style-type: none;
+header .logo h1 {
+    font-size: 1.8rem;
+    margin: 0;
 }
 
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-section {
-    padding: 20px;
-}
-
-#programs .programs {
+/* Navigation Menu */
+header nav {
     display: flex;
     gap: 20px;
 }
 
-.program-card {
-    background-color: #f4f4f4;
-    padding: 15px;
-    width: 30%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    color: #ffcc00; /* Accent hover color */
+    border-bottom: 2px solid #ffcc00; /* Accent underline */
+}
+
+/* Dropdown Styles */
+header nav .dropdown {
+    position: relative;
+}
+
+header nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+header nav .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    color: #003366;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    z-index: 1000;
+}
+
+header nav .dropdown-content a {
+    color: #003366;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+header nav .dropdown-content a:hover {
+    background-color: #003366;
+    color: white;
+}
+
+
+/* Hero Section */
+.hero {
+    background: url('https://gghs-tahir-model.netlify.app/Images/school3.jpg') no-repeat center center/cover;
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+/* Hero Section */
+.hero {
+    background: url('https://gghs-tahir-model.netlify.app/Images/school3.jpg') no-repeat center center/cover;
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+/* Container for the quote and author */
+.mission-quote-container {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 40px 20px;
+    max-width: 900px; /* Constrain the width */
+    margin: 0 auto;
+    z-index: 2; /* Ensure the text is above the background */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+/* Styling for the quote */
+.quote {
+    font-size: 24px;
+    font-style: italic;
+    color: #f1c40f;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* Styling for the author */
+.author {
+    font-size: 18px;
+    color: #ecf0f1;
+    margin-top: 10px;
+}
+
+/* Responsive Typography */
+@media (max-width: 1200px) {
+    .hero h2 {
+        font-size: 3rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 0.95rem;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 0.85rem;
+        padding: 0 10px;
+    }
+}
+
+/* General Styles */
+#student-count {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+}
+
+#student-count h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+#student-count h2 .highlight {
+    color: #014b70; /* QMC Website's blue for '2024' */
+}
+
+/* Container for Student Counts */
+.student-count-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 1rem; /* Reduce gap for closer alignment */
+    max-width: 1200px; /* Limit overall width */
+    margin: 0 auto; /* Center the content */
+    padding: 0 1rem;
+}
+
+/* Student Count Item */
+.student-count-item {
+    background: white;
+    padding: 1.2rem; /* Compact padding */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.student-count-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.student-count-item i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #014b70; /* Match QMC's blue color */
+}
+
+.student-count-item h3 {
+    font-size: 1.8rem;
+    color: #014b70; /* Consistent QMC color */
+    margin: 0.5rem 0;
+}
+
+.student-count-item p {
+    font-size: 1rem;
+    color: #666; /* Neutral text color */
+}
+
+/* Adjust Icon Colors for Each Grade */
+.student-count-item:nth-child(1) i {
+    color: #014b70; /* Grade 8 Icon (QMC Blue) */
+}
+
+.student-count-item:nth-child(2) i {
+    color: #0e9aa7; /* Grade 9 Icon (QMC Teal) */
+}
+
+.student-count-item:nth-child(3) i {
+    color: #f6cd61; /* Grade 10 Icon (Soft Yellow) */
+}
+
+.student-count-item:nth-child(4) i {
+    color: #f26d6d; /* Grand Total Icon (Soft Red) */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    #student-count h2 {
+        font-size: 1.5rem;
+    }
+
+    .student-count-item {
+        padding: 1rem; /* Smaller padding for smaller screens */
+    }
+
+    .student-count-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .student-count-item i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Gallery Section */
+.gallery {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .gallery-images {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent black background */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 80%;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* Cross Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.close-btn:hover {
+    background: rgba(255, 0, 0, 0.7);
+}
+
+/* Navigation Buttons */
+.modal-actions {
+    display: flex;
+    justify-content: center;
     gap: 10px;
 }
 
-.gallery-images img {
-    width: 100%;
-    height: auto;
+button {
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black */
+    color: #fff;
+    padding: 10px;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
-footer {
-    background-color: #1a1a1a;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
+button:hover {
+    opacity: 1;
 }
+
+.prev-btn {
+    background-color: rgba(0, 0, 255, 0.7); /* Blue */
+}
+
+.next-btn {
+    background-color: rgba(255, 0, 0, 0.7); /* Red */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .gallery-images {
+        flex-direction: column;
+    }
+
+    .gallery-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .modal-content {
+        max-width: 90%;
+    }
+}
+
+#why-choose-us {
+    background: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#why-choose-us .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#why-choose-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#why-choose-us .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#why-choose-us .feature {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#why-choose-us .feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+#why-choose-us .icon {
+    font-size: 3em;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+#why-choose-us h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#why-choose-us p {
+    font-size: 1em;
+    color: #666;
+}
+
+
+/* FAQ Section Styling */
+#faq {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#faq .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    background-color: #f9f9f9;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.faq-item:hover {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+.faq-question-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    font-size: 1.25rem;
+    color: #333;
+    margin-right: 10px;  /* Space between question and button */
+}
+
+.faq-answer {
+    display: none;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    color: #007bff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.faq-toggle:hover {
+    color: #0056b3;
+}
+
+.faq-toggle:focus {
+    outline: none;
+}
+
+.faq-answer {
+    display: none;
+}
+.faq-answer.visible {
+    display: block;
+}
+
+
+/* Map Section */
+#map {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+#map iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+/* General Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Container for the entire footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* Styling the footer sections */
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    text-align: left;
+}
+
+/* Quick Links Section */
+#quick-links h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#quick-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#quick-links li {
+    margin: 8px 0;
+}
+
+#quick-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+#quick-links li a:hover {
+    color: #2d8fdf;
+}
+
+/* Social Icons Section */
+.social-icons a {
+    color: #fff;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.social-icons a:hover {
+    color: #2d8fdf;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .footer-section h3 {
+        font-size: 1.3em;
+    }
+
+    #quick-links li a {
+        font-size: 1.1em;
+    }
+
+    .social-icons a {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 20px 10px;
+    }
+
+    .footer-section h3 {
+        font-size: 1.2em;
+    }
+
+    #quick-links li a {
+        font-size: 1em;
+    }
+
+    .social-icons a {
+        font-size: 1em;
+        margin-right: 10px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8em;
+    }
+}
+
