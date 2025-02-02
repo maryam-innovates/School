@@ -541,12 +541,16 @@ button:hover {
     border: none;
 }
 
+
+}
+
 /* General Footer Styles */
 footer {
-    background-color: #333;
+    background-color: #003366; /* Custom color scheme */
     color: #fff;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
+    text-align: center;
 }
 
 /* Container for the entire footer */
@@ -556,52 +560,72 @@ footer {
     align-items: flex-start;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Styling the footer sections */
+/* Left Section (Logo, School Name, Email) */
+.footer-left {
+    flex: 1;
+    text-align: left;
+}
+
+.school-logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+.footer-left h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.footer-left p a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.footer-left p a:hover {
+    color: #2d8fdf;
+}
+
+/* Right Section (Quick Links) */
+.footer-right {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
 .footer-section {
     flex: 1;
     margin: 10px;
-    text-align: left;
 }
 
-/* Quick Links Section */
-#quick-links h3 {
+.footer-section h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    text-align: left;
 }
 
-#quick-links ul {
+.footer-section ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-#quick-links li {
+.footer-section li {
     margin: 8px 0;
 }
 
-#quick-links li a {
+.footer-section li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s ease;
 }
 
-#quick-links li a:hover {
-    color: #2d8fdf;
-}
-
-/* Social Icons Section */
-.social-icons a {
-    color: #fff;
-    margin-right: 15px;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-.social-icons a:hover {
+.footer-section li a:hover {
     color: #2d8fdf;
 }
 
