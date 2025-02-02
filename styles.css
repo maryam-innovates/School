@@ -733,48 +733,6 @@ footer {
     }
 }
 
-/* Make header fixed and adjust position */
-header {
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #003366; /* Main header background color */
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Adjust logo size on smaller screens */
-header .logo img {
-    height: 40px; /* Smaller size on mobile */
-}
-
-header .logo h1 {
-    font-size: 1.5rem; /* Smaller font size on mobile */
-}
-
-/* Make navigation menu flexible on smaller screens */
-header nav {
-    display: flex;
-    gap: 20px;
-}
-
-header nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 5px 10px;
-    transition: all 0.3s ease;
-}
-
-header nav a:hover {
-    color: #ffcc00;
-    border-bottom: 2px solid #ffcc00;
-}
-
 /* Back to Top Button Styles */
 .back-to-top-btn {
     position: fixed;
