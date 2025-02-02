@@ -755,6 +755,36 @@ header nav a:hover {
     border-bottom: 2px solid #ffcc00;
 }
 
+/* Back to Top Button Styles */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #003366; /* Background color */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%; /* Make it circular */
+    font-size: 20px; /* Adjust the size of the icon */
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+}
+
+.back-to-top-btn:hover {
+    background-color: #ffcc00; /* Accent hover color */
+}
+
+/* Optional transition for smooth appearance */
+.back-to-top-btn {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Font Awesome Icon styles */
+.back-to-top-btn i {
+    color: white;
+}
+
 /* Responsive Design for navigation */
 @media (max-width: 1024px) {
     header nav {
