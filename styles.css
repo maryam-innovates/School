@@ -665,3 +665,142 @@ footer {
     }
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .footer-section h3 {
+        font-size: 1.3em;
+    }
+
+    #quick-links li a {
+        font-size: 1.1em;
+    }
+
+    .social-icons a {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 20px 10px;
+    }
+
+    .footer-section h3 {
+        font-size: 1.2em;
+    }
+
+    #quick-links li a {
+        font-size: 1em;
+    }
+
+    .social-icons a {
+        font-size: 1em;
+        margin-right: 10px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8em;
+
+    }
+}
+
+/* Make header fixed and adjust position */
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #003366; /* Main header background color */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Adjust logo size on smaller screens */
+header .logo img {
+    height: 40px; /* Smaller size on mobile */
+}
+
+header .logo h1 {
+    font-size: 1.5rem; /* Smaller font size on mobile */
+}
+
+/* Make navigation menu flexible on smaller screens */
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    color: #ffcc00;
+    border-bottom: 2px solid #ffcc00;
+}
+
+/* Responsive Design for navigation */
+@media (max-width: 1024px) {
+    header nav {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Stack logo and navigation vertically on small screens */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    header .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    header nav {
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 10px;
+    }
+
+    header nav a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Further adjustment for mobile */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    header .logo h1 {
+        font-size: 1.1rem;
+    }
+
+    header nav a {
+        font-size: 0.85rem;
+    }
+}
