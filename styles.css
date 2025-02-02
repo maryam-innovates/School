@@ -636,7 +636,6 @@ footer {
     font-size: 0.9em;
     color: #ccc;
 }
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .footer-container {
