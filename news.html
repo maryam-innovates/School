@@ -33,7 +33,6 @@
       text-decoration: none;
       color: inherit;
     }
-    
     /* News Grid */
     .news-grid {
       display: grid;
@@ -73,7 +72,6 @@
       font-size: 0.85rem;
       color: #777;
     }
-    
     /* Loader Styling */
     .loader {
       border: 4px solid #f3f3f3;
@@ -88,7 +86,6 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-    
     /* Text Selection Styling */
     ::selection {
       background: #4285f4;
@@ -98,8 +95,7 @@
       background: #4285f4;
       color: white;
     }
-    
-    /* Footer (Optional if used on this page) */
+    /* Footer */
     footer {
       background-color: #003366;
       color: #fff;
@@ -111,7 +107,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Latest News & Updates</h1>
+    <h1>Latest Educational News & Updates</h1>
     <div id="news-container">
       <div class="loader" id="news-loader"></div>
     </div>
@@ -122,39 +118,40 @@
   </footer>
   
   <script>
-// Replace with your actual RSS feed URL (e.g., from HEC)
-const rssFeedUrl = 'https://www.hec.gov.pk/rss'; 
-const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssFeedUrl);
+    // Replace the RSS feed URL with your desired educational news source.
+    // Here we use HEC Pakistan's news feed. If you prefer BISE Lahore, change the URL accordingly.
+    const rssFeedUrl = 'https://www.hec.gov.pk/english/rss/feed.xml'; 
+    const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssFeedUrl);
 
-fetch(apiUrl)
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById('news-container');
-    container.innerHTML = ''; // Clear loader or previous content.
-    if (data.items && data.items.length > 0) {
-      let newsHTML = '<div class="news-grid">';
-      data.items.slice(0, 6).forEach(item => {
-        newsHTML += `
-          <div class="news-card">
-            <img src="${item.thumbnail || 'https://via.placeholder.com/300x200'}" alt="${item.title}">
-            <div class="news-content">
-              <h3><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h3>
-              <p>${item.description.replace(/(<([^>]+)>)/gi, "").substring(0, 100)}...</p>
-              <div class="news-date">${new Date(item.pubDate).toLocaleDateString()}</div>
-            </div>
-          </div>
-        `;
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('news-container');
+        container.innerHTML = ''; // Clear loader or previous content.
+        if (data.items && data.items.length > 0) {
+          let newsHTML = '<div class="news-grid">';
+          data.items.slice(0, 6).forEach(item => {
+            newsHTML += `
+              <div class="news-card">
+                <img src="${item.thumbnail || 'https://via.placeholder.com/300x200'}" alt="${item.title}">
+                <div class="news-content">
+                  <h3><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h3>
+                  <p>${item.description.replace(/(<([^>]+)>)/gi, "").substring(0, 100)}...</p>
+                  <div class="news-date">${new Date(item.pubDate).toLocaleDateString()}</div>
+                </div>
+              </div>
+            `;
+          });
+          newsHTML += '</div>';
+          container.innerHTML = newsHTML;
+        } else {
+          container.innerHTML = '<p>No news updates available at this time.</p>';
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching news:', error);
+        document.getElementById('news-container').innerHTML = '<p>Unable to load news updates.</p>';
       });
-      newsHTML += '</div>';
-      container.innerHTML = newsHTML;
-    } else {
-      container.innerHTML = '<p>No news updates available at this time.</p>';
-    }
-  })
-  .catch(error => {
-    console.error('Error fetching news:', error);
-    document.getElementById('news-container').innerHTML = '<p>Unable to load news updates.</p>';
-  });
   </script>
 </body>
 </html>
