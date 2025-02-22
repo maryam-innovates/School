@@ -17,21 +17,57 @@
       background: #f4f4f4;
       color: #333;
       line-height: 1.6;
+      padding-bottom: 20px;
     }
+    /* Header Styles (from provided snippet) */
+    header {
+      background-color: #003366;
+      color: #fff;
+      padding: 20px 0;
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .header-container img.school-logo {
+      height: 50px;
+      margin-right: 15px;
+    }
+    .header-container h1 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    nav {
+      max-width: 1200px;
+      margin: 10px auto;
+      padding: 0 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    /* Main Container */
     .container {
       width: 90%;
       max-width: 1200px;
       margin: 20px auto;
       padding: 20px;
+      background: #fff;
     }
-    h1 {
+    h1.page-title {
       text-align: center;
       color: #003366;
       margin-bottom: 20px;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
     }
     /* News Grid */
     .news-grid {
@@ -86,14 +122,19 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-    /* Text Selection Styling */
-    ::selection {
-      background: #4285f4;
-      color: white;
-    }
-    ::-moz-selection {
-      background: #4285f4;
-      color: white;
+    /* Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #003366;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+      font-size: 16px;
     }
     /* Footer */
     footer {
@@ -101,39 +142,87 @@
       color: #fff;
       padding: 20px;
       text-align: center;
-      margin-top: 40px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
+  <!-- Header (as provided) -->
+  <header>
+    <div class="header-container">
+      <img src="https://gghs-tahir-model.netlify.app/Images/logo.png" alt="School Logo" class="school-logo">
+      <h1>Govt. Tahir Model Girls High School</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="feedback.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
   <div class="container">
-    <h1>Latest Educational News & Updates</h1>
+    <h1 class="page-title">Latest Education News & Updates</h1>
     <div id="news-container">
       <div class="loader" id="news-loader"></div>
     </div>
   </div>
-  
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" onclick="scrollToTop()">Back to Top</button>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Govt. Tahir Model Girls High School. All Rights Reserved.</p>
   </footer>
-  
+
   <script>
-    // Replace the RSS feed URL with your desired educational news source.
-    // Here we use HEC Pakistan's news feed. If you prefer BISE Lahore, change the URL accordingly.
-    const rssFeedUrl = 'https://www.hec.gov.pk/english/rss/feed.xml'; 
+    // Back to Top functionality
+    window.onscroll = function() {
+      var btn = document.getElementById("back-to-top");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Helper function to get an image URL from the feed item
+    function getImageUrl(item) {
+      if (item.thumbnail) {
+        return item.thumbnail;
+      } else if (item.enclosure && item.enclosure.link) {
+        return item.enclosure.link;
+      } else {
+        return 'https://via.placeholder.com/300x200';
+      }
+    }
+
+    // Fetch News from RSS Feed using The Guardian Education feed
+    const rssFeedUrl = 'https://www.theguardian.com/education/rss';
     const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssFeedUrl);
 
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
+        console.log(data); // Debug: log fetched data
         const container = document.getElementById('news-container');
-        container.innerHTML = ''; // Clear loader or previous content.
+        container.innerHTML = ''; // Clear loader
         if (data.items && data.items.length > 0) {
           let newsHTML = '<div class="news-grid">';
           data.items.slice(0, 6).forEach(item => {
+            let imageUrl = getImageUrl(item);
             newsHTML += `
               <div class="news-card">
-                <img src="${item.thumbnail || 'https://via.placeholder.com/300x200'}" alt="${item.title}">
+                <img src="${imageUrl}" alt="${item.title}">
                 <div class="news-content">
                   <h3><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h3>
                   <p>${item.description.replace(/(<([^>]+)>)/gi, "").substring(0, 100)}...</p>
@@ -145,7 +234,27 @@
           newsHTML += '</div>';
           container.innerHTML = newsHTML;
         } else {
-          container.innerHTML = '<p>No news updates available at this time.</p>';
+          // Fallback static news items if feed returns empty
+          container.innerHTML = `
+            <div class="news-grid">
+              <div class="news-card">
+                <img src="https://via.placeholder.com/300x200" alt="The Guardian Education">
+                <div class="news-content">
+                  <h3><a href="https://www.theguardian.com/education" target="_blank" rel="noopener">The Guardian Education</a></h3>
+                  <p>Explore the latest updates in education from primary to higher education worldwide.</p>
+                  <div class="news-date">Latest</div>
+                </div>
+              </div>
+              <div class="news-card">
+                <img src="https://via.placeholder.com/300x200" alt="NYT Education">
+                <div class="news-content">
+                  <h3><a href="https://www.nytimes.com/section/education" target="_blank" rel="noopener">NYT Education</a></h3>
+                  <p>Stay informed with comprehensive education news and analysis from The New York Times.</p>
+                  <div class="news-date">Latest</div>
+                </div>
+              </div>
+            </div>
+          `;
         }
       })
       .catch(error => {
