@@ -122,41 +122,39 @@
   </footer>
   
   <script>
-    // Replace the RSS feed URL with your desired feed (e.g., HEC's RSS feed if available)
-    // For demonstration, we're using a dummy RSS feed URL.
-    const rssFeedUrl = 'https://www.hec.gov.pk/rss'; // Hypothetical URL; adjust as needed.
-    const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssFeedUrl);
-    
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById('news-container');
-        container.innerHTML = ''; // Clear the loader.
-        if(data.items && data.items.length > 0) {
-          let newsHTML = '<div class="news-grid">';
-          // Show the 6 most recent news items.
-          data.items.slice(0, 6).forEach(item => {
-            newsHTML += `
-              <div class="news-card">
-                <img src="${item.thumbnail || 'https://via.placeholder.com/300x200'}" alt="${item.title}">
-                <div class="news-content">
-                  <h3><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h3>
-                  <p>${item.description.replace(/(<([^>]+)>)/gi, "").substring(0, 100)}...</p>
-                  <div class="news-date">${new Date(item.pubDate).toLocaleDateString()}</div>
-                </div>
-              </div>
-            `;
-          });
-          newsHTML += '</div>';
-          container.innerHTML = newsHTML;
-        } else {
-          container.innerHTML = '<p>No news updates available at this time.</p>';
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching news:', error);
-        document.getElementById('news-container').innerHTML = '<p>Unable to load news updates.</p>';
+// Replace with your actual RSS feed URL (e.g., from HEC)
+const rssFeedUrl = 'https://www.hec.gov.pk/rss'; 
+const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssFeedUrl);
+
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('news-container');
+    container.innerHTML = ''; // Clear loader or previous content.
+    if (data.items && data.items.length > 0) {
+      let newsHTML = '<div class="news-grid">';
+      data.items.slice(0, 6).forEach(item => {
+        newsHTML += `
+          <div class="news-card">
+            <img src="${item.thumbnail || 'https://via.placeholder.com/300x200'}" alt="${item.title}">
+            <div class="news-content">
+              <h3><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h3>
+              <p>${item.description.replace(/(<([^>]+)>)/gi, "").substring(0, 100)}...</p>
+              <div class="news-date">${new Date(item.pubDate).toLocaleDateString()}</div>
+            </div>
+          </div>
+        `;
       });
+      newsHTML += '</div>';
+      container.innerHTML = newsHTML;
+    } else {
+      container.innerHTML = '<p>No news updates available at this time.</p>';
+    }
+  })
+  .catch(error => {
+    console.error('Error fetching news:', error);
+    document.getElementById('news-container').innerHTML = '<p>Unable to load news updates.</p>';
+  });
   </script>
 </body>
 </html>
