@@ -5,89 +5,225 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact - Govt. Tahir Model Girls High School</title>
   <style>
-    /* Reset & Global Styles */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #fff; color: #333; }
-    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
-    a { text-decoration: none; color: inherit; }
+      /* General Reset */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    } 
     
-    /* Header – EXACT from reference */
-    header { background: #4285f4; padding: 20px 0; }
-    header .container { display: flex; justify-content: space-between; align-items: center; }
-    header h1 { color: #fff; font-size: 24px; }
-    nav ul { list-style: none; display: flex; }
-    nav ul li { margin-left: 20px; }
-    nav ul li a { color: #fff; font-size: 16px; }
-    
-    /* Main Content – Centered Feedback Form */
-    main { padding: 40px 0; }
-    .feedback-section { 
-      background: #f9f9f9; 
-      border: 1px solid #ddd; 
-      border-radius: 5px; 
-      padding: 30px; 
-      width: 100%; 
-      max-width: 600px; 
-      margin: 0 auto; 
-    }
-    .feedback-section h2 { 
-      text-align: center; 
-      margin-bottom: 20px; 
-      font-size: 20px; 
-    }
-    .feedback-form .form-group { margin-bottom: 15px; }
-    .feedback-form label { 
-      display: block; 
-      margin-bottom: 5px; 
-      font-weight: bold; 
-    }
-    .feedback-form input, 
-    .feedback-form textarea { 
-      width: 100%; 
-      padding: 10px; 
-      border: 1px solid #ccc; 
-      border-radius: 4px; 
-    }
-    .feedback-form button { 
-      width: 100%; 
-      padding: 10px; 
-      background: #4285f4; 
-      border: none; 
-      color: #fff; 
-      font-size: 16px; 
-      border-radius: 4px; 
-      cursor: pointer; 
-    }
-    .feedback-form button:hover { background: #357ae8; }
-    #thankyou-message { 
-      text-align: center; 
-      margin-top: 20px; 
-      display: none; 
-      color: green; 
-      font-size: 18px; 
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f4f4f4;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
     }
     
-    /* Footer – EXACT from reference with only Quick Links */
-    footer { background: #222; color: #fff; padding: 20px 0; }
-    footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; }
-    .footer-section { width: 100%; max-width: 300px; margin: 10px 0; }
-    .footer-section h3 { 
-      font-size: 16px; 
-      margin-bottom: 10px; 
-      border-bottom: 1px solid #444; 
-      padding-bottom: 5px; 
+    /* Header Styling */
+    header {
+        background-color: #003366;
+        color: white;
+        padding: 20px 0;
     }
-    .footer-section ul { list-style: none; }
-    .footer-section ul li { margin-bottom: 8px; }
-    .footer-section ul li a { color: #fff; font-size: 14px; }
-    .footer-section ul li a:hover { text-decoration: underline; }
-    .footer-bottom { 
-      text-align: center; 
-      padding: 10px 0; 
-      border-top: 1px solid #444; 
-      margin-top: 20px; 
-      font-size: 14px; 
+    
+    header nav {
+        text-align: center;
     }
+    
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    header nav a:hover {
+    color: #ffcc00;
+    border-bottom: 2px solid #ffcc00;
+    }
+    
+    .school-logo {
+        width: 60px;
+        height: auto;
+        margin-right: 15px;
+    }
+    
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+    }
+
+        main { padding: 40px 0; }
+        .feedback-section { 
+          background: #f9f9f9; 
+          border: 1px solid #ddd; 
+          border-radius: 5px; 
+          padding: 30px; 
+          width: 100%; 
+          max-width: 600px; 
+          margin: 0 auto; 
+        }
+        .feedback-section h2 { 
+          text-align: center; 
+          margin-bottom: 20px; 
+          font-size: 20px; 
+        }
+        .feedback-form .form-group { margin-bottom: 15px; }
+        .feedback-form label { 
+          display: block; 
+          margin-bottom: 5px; 
+          font-weight: bold; 
+        }
+        .feedback-form input, 
+        .feedback-form textarea { 
+          width: 100%; 
+          padding: 10px; 
+          border: 1px solid #ccc; 
+          border-radius: 4px; 
+        }
+        .feedback-form button { 
+          width: 100%; 
+          padding: 10px; 
+          background: #4285f4; 
+          border: none; 
+          color: #fff; 
+          font-size: 16px; 
+          border-radius: 4px; 
+          cursor: pointer; 
+        }
+        .feedback-form button:hover { background: #357ae8; }
+        #thankyou-message { 
+          text-align: center; 
+          margin-top: 20px; 
+          display: none; 
+          color: green; 
+          font-size: 18px; 
+        }
+     /* General Footer Styles */
+    footer {
+        background-color: #003366; /* Custom color scheme */
+        color: #fff;
+        padding: 40px 20px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    
+    /* Container for the entire footer */
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Left Section (Logo, School Name, Email) */
+    .footer-left {
+        flex: 1;
+        text-align: left;
+    }
+    
+    .school-logo {
+        max-width: 150px;
+        margin-bottom: 10px;
+    }
+    
+    .footer-left h3 {
+        font-size: 1.6em;
+        margin-bottom: 10px;
+    }
+    
+    .footer-left p a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.1em;
+    }
+    
+    .footer-left p a:hover {
+        color: #2d8fdf;
+    }
+    
+    /* Right Section (Quick Links) */
+    .footer-right {
+        flex: 2;
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+    }
+    
+    .footer-section {
+        flex: 1;
+        margin: 10px;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-section li {
+        margin: 8px 0;
+    }
+    
+    .footer-section li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.1em;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-section li a:hover {
+        color: #2d8fdf;
+    }
+    
+    /* Footer Bottom */
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.9em;
+        color: #ccc;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        .footer-right {
+            flex-direction: column;
+        }
+    
+        .footer-left {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+} 
     
     /* Back-to-Top Button – EXACT style */
     #back-to-top {
