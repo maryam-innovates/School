@@ -3,57 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Feedback Form</title>
+  <title>Contact - Govt. Tahir Model Girls High School</title>
   <style>
-    /* Basic Reset & Body Styling */
+    /* General Styles */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff;
       color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
     }
     .container {
-      max-width: 600px;
-      margin: 30px auto;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 20px;
-      background: #fff;
+    }
+    h1, h2, h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #4285f4; /* Blue */
+      color: #fff;
+      padding: 20px 0;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    nav ul {
+      display: flex;
+    }
+    nav li {
+      margin-left: 20px;
+    }
+    nav a {
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #d1e8ff;
+    }
+
+    /* Main Content */
+    main {
+      padding: 40px 0;
+    }
+    /* Feedback Section */
+    .feedback-section {
+      background: #f9f9f9;
+      padding: 30px;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
     }
-    h2 {
+    .feedback-section h2 {
       text-align: center;
       margin-bottom: 20px;
     }
-    .form-group {
+    .feedback-form .form-group {
       margin-bottom: 15px;
     }
-    label {
+    .feedback-form label {
       display: block;
       font-weight: bold;
       margin-bottom: 5px;
     }
-    input[type="text"],
-    input[type="email"],
-    textarea {
+    .feedback-form input[type="text"],
+    .feedback-form input[type="email"],
+    .feedback-form textarea {
       width: 100%;
-      padding: 8px;
+      padding: 10px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
-    button {
-      display: block;
+    .feedback-form button {
       width: 100%;
-      padding: 10px;
-      background-color: #4285f4;
-      color: #fff;
+      padding: 12px;
+      background: #4285f4;
       border: none;
-      border-radius: 4px;
+      color: #fff;
       font-size: 16px;
+      border-radius: 4px;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
-    button:hover {
-      background-color: #357ae8;
+    .feedback-form button:hover {
+      background: #357ae8;
     }
     #thankyou-message {
       display: none;
@@ -62,54 +114,179 @@
       color: green;
       font-size: 18px;
     }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+    }
+    footer .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    footer .footer-col {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+    footer h3 {
+      border-bottom: 1px solid #555;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    footer ul li {
+      margin-bottom: 10px;
+    }
+    footer ul li a {
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+    footer ul li a:hover {
+      color: #4285f4;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 10px;
+      border-top: 1px solid #555;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #4285f4;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      font-size: 18px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: background 0.3s ease;
+    }
+    #back-to-top:hover {
+      background: #357ae8;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>We Value Your Feedback</h2>
-    <form id="feedbackForm" action="https://formspree.io/f/mbldbkeb" method="POST">
-      <div class="form-group">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" placeholder="Maryam" required>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Govt. Tahir Model Girls High School</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="faqs.html">Faqs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <section class="feedback-section" id="contact">
+      <h2>We Value Your Feedback</h2>
+      <p style="text-align: center;">Let us know your thoughts and suggestions.</p>
+      <form id="feedbackForm" class="feedback-form" action="https://formspree.io/f/mbldbkeb" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" placeholder="Maryam" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" placeholder="maryam@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
+        </div>
+        <button type="submit">Send</button>
+      </form>
+      <div id="thankyou-message">Thank you for your feedback!</div>
+    </section>
+  </main>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Back to top">&#8679;</button>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="https://hed.punjab.gov.pk/">HE Punjab</a></li>
+          <li><a href="http://mis.hed.punjab.gov.pk/">MIS Punjab</a></li>
+          <li><a href="https://hed.punjab.gov.pk/colleges">Colleges</a></li>
+          <li><a href="https://www.punjab.gov.pk/hed">Punjab HED</a></li>
+        </ul>
       </div>
-      <div class="form-group">
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" placeholder="maryam@example.com" required>
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <ul>
+          <li>Address: Main Campus, Sector C DHA Phase 6, Lahore</li>
+          <li>Phone: (042) 37181821</li>
+          <li>Email: info@gths.edu.pk</li>
+        </ul>
       </div>
-      <div class="form-group">
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
+      <div class="footer-col">
+        <h3>About</h3>
+        <ul>
+          <li>Founded: 2010</li>
+          <li>Students: 12,000+</li>
+          <li>Chancellor: Governor of Punjab</li>
+          <li>Vice-Chancellor: Maj Gen Muhammad Khalil Dar, HI(M) (Retd)</li>
+          <li>Registrar: Brig (R) Mahmud Zain Bajwa</li>
+        </ul>
       </div>
-      <button type="submit">Send</button>
-    </form>
-    <div id="thankyou-message">Thank you for your feedback!</div>
-  </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Govt. Tahir Model Girls High School. All Rights Reserved.
+    </div>
+  </footer>
 
   <script>
-    // Handle form submission using AJAX
+    // AJAX form submission for Formspree
     document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevent default form submission
-
+      e.preventDefault();
       var form = e.target;
       var data = new FormData(form);
-
-      // Create AJAX request
       var xhr = new XMLHttpRequest();
       xhr.open(form.method, form.action);
       xhr.setRequestHeader("Accept", "application/json");
-
       xhr.onreadystatechange = function() {
         if (xhr.readyState !== XMLHttpRequest.DONE) return;
         if (xhr.status === 200) {
-          // Show a thank you message on success
           form.reset();
           document.getElementById('thankyou-message').style.display = 'block';
         } else {
-          // Optionally handle errors here
           alert("Oops! There was a problem submitting your feedback.");
         }
       };
       xhr.send(data);
+    });
+
+    // Back to Top functionality
+    var backToTopBtn = document.getElementById("back-to-top");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+    backToTopBtn.addEventListener("click", function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
