@@ -5,7 +5,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-} 
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -33,8 +33,8 @@ header nav {
 }
 
 header nav a:hover {
-color: #ffcc00;
-border-bottom: 2px solid #ffcc00;
+    color: #ffcc00;
+    border-bottom: 2px solid #ffcc00;
 }
 
 .school-logo {
@@ -68,27 +68,16 @@ nav ul li a {
     position: relative;
     z-index: 1;
 }
-/* Hero Section */
-.hero {
-    background: url('https://gghs-tahir-model.netlify.app/Images/school3.jpg') no-repeat center center/cover;
-    padding: 100px 20px;
-    text-align: center;
-    color: #fff;
-    position: relative;
-    z-index: 1;
-}
 
-/* Container for the quote and author */
 .mission-quote-container {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.5); 
     padding: 40px 20px;
-    max-width: 900px; /* Constrain the width */
+    max-width: 900px;
     margin: 0 auto;
-    z-index: 2; /* Ensure the text is above the background */
-    border-radius: 10px; /* Optional: Rounded corners */
+    z-index: 2;
+    border-radius: 10px;
 }
 
-/* Styling for the quote */
 .quote {
     font-size: 24px;
     font-style: italic;
@@ -97,7 +86,6 @@ nav ul li a {
     line-height: 1.6;
 }
 
-/* Styling for the author */
 .author {
     font-size: 18px;
     color: #ecf0f1;
@@ -134,101 +122,6 @@ nav ul li a {
     }
 }
 
-/* General Styles */
-#student-count {
-    text-align: center;
-    padding: 2rem 1rem;
-    background-color: #f9f9f9;
-}
-
-#student-count h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-}
-
-#student-count h2 .highlight {
-    color: #014b70; /* QMC Website's blue for '2024' */
-}
-
-/* Container for Student Counts */
-.student-count-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-    gap: 1rem; /* Reduce gap for closer alignment */
-    max-width: 1200px; /* Limit overall width */
-    margin: 0 auto; /* Center the content */
-    padding: 0 1rem;
-}
-
-/* Student Count Item */
-.student-count-item {
-    background: white;
-    padding: 1.2rem; /* Compact padding */
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.student-count-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.student-count-item i {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #014b70; /* Match QMC's blue color */
-}
-
-.student-count-item h3 {
-    font-size: 1.8rem;
-    color: #014b70; /* Consistent QMC color */
-    margin: 0.5rem 0;
-}
-
-.student-count-item p {
-    font-size: 1rem;
-    color: #666; /* Neutral text color */
-}
-
-/* Adjust Icon Colors for Each Grade */
-.student-count-item:nth-child(1) i {
-    color: #014b70; /* Grade 8 Icon (QMC Blue) */
-}
-
-.student-count-item:nth-child(2) i {
-    color: #0e9aa7; /* Grade 9 Icon (QMC Teal) */
-}
-
-.student-count-item:nth-child(3) i {
-    color: #f6cd61; /* Grade 10 Icon (Soft Yellow) */
-}
-
-.student-count-item:nth-child(4) i {
-    color: #f26d6d; /* Grand Total Icon (Soft Red) */
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-    #student-count h2 {
-        font-size: 1.5rem;
-    }
-
-    .student-count-item {
-        padding: 1rem; /* Smaller padding for smaller screens */
-    }
-
-    .student-count-item h3 {
-        font-size: 1.5rem;
-    }
-
-    .student-count-item i {
-        font-size: 1.5rem;
-    }
-}
-
 /* Gallery Section */
 .gallery {
     text-align: center;
@@ -253,11 +146,14 @@ nav ul li a {
     height: 150px;
     object-fit: cover;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-img:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Modal Overlay */
@@ -267,19 +163,18 @@ nav ul li a {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Transparent black background */
+    background-color: rgba(0, 0, 0, 0.8);
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 9999;
 }
 
-/* Modal Content */
 .modal-content {
     position: relative;
     max-width: 90%;
     max-height: 80%;
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     text-align: center;
     border-radius: 10px;
@@ -293,7 +188,6 @@ nav ul li a {
     margin-bottom: 20px;
 }
 
-/* Cross Button */
 .close-btn {
     position: absolute;
     top: 10px;
@@ -311,7 +205,6 @@ nav ul li a {
     background: rgba(255, 0, 0, 0.7);
 }
 
-/* Navigation Buttons */
 .modal-actions {
     display: flex;
     justify-content: center;
@@ -319,7 +212,7 @@ nav ul li a {
 }
 
 button {
-    background-color: rgba(0, 0, 0, 0.7); /* Transparent black */
+    background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: 10px;
     border: none;
@@ -334,11 +227,11 @@ button:hover {
 }
 
 .prev-btn {
-    background-color: rgba(0, 0, 255, 0.7); /* Blue */
+    background-color: rgba(0, 0, 255, 0.7);
 }
 
 .next-btn {
-    background-color: rgba(255, 0, 0, 0.7); /* Red */
+    background-color: rgba(255, 0, 0, 0.7);
 }
 
 /* Responsive Design */
@@ -386,7 +279,7 @@ button:hover {
     text-align: center;
 }
 
-.pop-3d:hover {
+.card:hover {
     transform: scale(1.05) rotateX(5deg);
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
@@ -396,7 +289,6 @@ button:hover {
     color: #4169e1;
     margin-bottom: 1rem;
 }
-
 
 /* FAQ Section Styling */
 #faq {
@@ -436,7 +328,7 @@ button:hover {
 .faq-question {
     font-size: 1.25rem;
     color: #333;
-    margin-right: 10px;  /* Space between question and button */
+    margin-right: 10px;
 }
 
 .faq-answer {
@@ -473,7 +365,6 @@ button:hover {
     display: block;
 }
 
-
 /* Map Section */
 #map {
     padding: 50px 0;
@@ -481,297 +372,84 @@ button:hover {
     background-color: #f7f7f7;
 }
 
-#map iframe {
-    width: 100%;
-    height: 450px;
-    border: none;
-}
-
-/* General Footer Styles */
+/* Footer Styling */
 footer {
-    background-color: #003366; /* Custom color scheme */
+    background-color: #003366;
     color: #fff;
     padding: 40px 20px;
-    font-family: Arial, sans-serif;
     text-align: center;
 }
 
-/* Container for the entire footer */
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
+footer h2 {
+    font-size: 2rem;
     margin-bottom: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-/* Left Section (Logo, School Name, Email) */
-.footer-left {
-    flex: 1;
-    text-align: left;
+footer p {
+    font-size: 1rem;
+    color: #f1f1f1;
+    margin-bottom: 20px;
 }
 
-.school-logo {
-    max-width: 150px;
-    margin-bottom: 10px;
-}
-
-.footer-left h3 {
-    font-size: 1.6em;
-    margin-bottom: 10px;
-}
-
-.footer-left p a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
-.footer-left p a:hover {
-    color: #2d8fdf;
-}
-
-/* Right Section (Quick Links) */
-.footer-right {
-    flex: 2;
+footer .social-icons {
     display: flex;
-    justify-content: space-between;
-    text-align: left;
-}
-
-.footer-section {
-    flex: 1;
-    margin: 10px;
-}
-
-.footer-section h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-section li {
-    margin: 8px 0;
-}
-
-.footer-section li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: color 0.3s ease;
-}
-
-.footer-section li a:hover {
-    color: #2d8fdf;
-}
-
-/* Footer Bottom */
-.footer-bottom {
-    text-align: center;
+    justify-content: center;
+    gap: 20px;
     margin-top: 20px;
 }
 
-.footer-bottom p {
-    font-size: 0.9em;
-    color: #ccc;
+footer .social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* Responsive Adjustments */
+footer .social-icons a:hover {
+    color: #ffcc00;
+}
+
+/* Responsive Footer */
 @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
+    footer h2 {
+        font-size: 1.5rem;
     }
 
-    .footer-right {
-        flex-direction: column;
-    }
-
-    .footer-left {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-section {
-        text-align: center;
-        margin: 15px 0;
-    }
-
-    .footer-section h3 {
-        font-size: 1.3em;
-    }
-
-    #quick-links li a {
-        font-size: 1.1em;
-    }
-
-    .social-icons a {
-        font-size: 1.1em;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-container {
-        padding: 20px 10px;
-    }
-
-    .footer-section h3 {
-        font-size: 1.2em;
-    }
-
-    #quick-links li a {
-        font-size: 1em;
-    }
-
-    .social-icons a {
-        font-size: 1em;
-        margin-right: 10px;
-    }
-
-    .footer-bottom p {
-        font-size: 0.8em;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-section {
-        text-align: center;
-        margin: 15px 0;
-    }
-
-    .footer-section h3 {
-        font-size: 1.3em;
-    }
-
-    #quick-links li a {
-        font-size: 1.1em;
-    }
-
-    .social-icons a {
-        font-size: 1.1em;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-container {
-        padding: 20px 10px;
-    }
-
-    .footer-section h3 {
-        font-size: 1.2em;
-    }
-
-    #quick-links li a {
-        font-size: 1em;
-    }
-
-    .social-icons a {
-        font-size: 1em;
-        margin-right: 10px;
-    }
-
-    .footer-bottom p {
-        font-size: 0.8em;
-
-    }
-}
-
-/* Back to Top Button Styles */
-.back-to-top-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #003366; /* Background color */
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 50%; /* Make it circular */
-    font-size: 20px; /* Adjust the size of the icon */
-    cursor: pointer;
-    display: none; /* Initially hidden */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
-}
-
-.back-to-top-btn:hover {
-    background-color: #ffcc00; /* Accent hover color */
-}
-
-/* Optional transition for smooth appearance */
-.back-to-top-btn {
-    transition: all 0.3s ease-in-out;
-}
-
-/* Font Awesome Icon styles */
-.back-to-top-btn i {
-    color: white;
-}
-
-/* Responsive Design for navigation */
-@media (max-width: 1024px) {
-    header nav {
-        gap: 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Stack logo and navigation vertically on small screens */
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
-    }
-
-    header .logo {
-        margin-bottom: 10px;
-    }
-
-    header .logo h1 {
-        font-size: 1.2rem;
-    }
-
-    header nav {
-        width: 100%;
-        justify-content: space-between;
-        padding-top: 10px;
-    }
-
-    header nav a {
+    footer p {
         font-size: 0.9rem;
     }
+
+    footer .social-icons {
+        flex-direction: column;
+    }
+
+    footer .social-icons a {
+        font-size: 1.2rem;
+    }
 }
 
-/* Further adjustment for mobile */
-@media (max-width: 480px) {
-    header {
-        padding: 10px 15px;
-    }
+/* Back to Top Button */
+#backToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: none; /* Hidden by default */
+}
 
-    header .logo h1 {
-        font-size: 1.1rem;
-    }
+#backToTopBtn:hover {
+    background-color: #ffcc00;
+    transform: scale(1.1);
+}
 
-    header nav a {
-        font-size: 0.85rem;
-    }
+/* Show the button when user scrolls down */
+#backToTopBtn.show {
+    display: block;
 }
