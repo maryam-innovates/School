@@ -357,60 +357,44 @@ button:hover {
     }
 }
 
-#why-choose-us {
-    background: #f9f9f9;
-    padding: 50px 0;
+.highlight-section {
+    padding: 4rem 2rem;
+    background-color: #f9f9ff;
     text-align: center;
 }
 
-#why-choose-us .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-#why-choose-us h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+.section-title {
+    font-size: 2.5rem;
     color: #333;
+    margin-bottom: 2rem;
 }
 
-#why-choose-us .features {
+.card-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
-#why-choose-us .feature {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 250px;
-    transition: transform 0.3s, box-shadow 0.3s;
+.card {
+    background: linear-gradient(145deg, #e6ecff, #ffffff);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
-#why-choose-us .feature:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+.pop-3d:hover {
+    transform: scale(1.05) rotateX(5deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-#why-choose-us .icon {
-    font-size: 3em;
-    color: #007bff;
-    margin-bottom: 15px;
-}
-
-#why-choose-us h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-#why-choose-us p {
-    font-size: 1em;
-    color: #666;
+.icon-3d {
+    font-size: 3rem;
+    color: #4169e1;
+    margin-bottom: 1rem;
 }
 
 
