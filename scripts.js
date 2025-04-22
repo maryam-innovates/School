@@ -47,21 +47,6 @@ modalOverlay.addEventListener('click', (event) => {
 });
 
 
-document.querySelectorAll('.faq-toggle').forEach(toggle => {
-    toggle.addEventListener('click', () => {
-        const faqItem = toggle.closest('.faq-item');
-        const answer = faqItem.querySelector('.faq-answer');
-
-        // Toggle the answer's visibility
-        const isOpen = answer.style.display === 'block';
-        answer.style.display = isOpen ? 'none' : 'block';
-
-        // Change the button symbol
-        toggle.textContent = isOpen ? '+' : '–';
-    });
-});
-
-
 const backToTopBtn = document.getElementById('backToTop');
 
 // Show/hide on scroll
@@ -72,6 +57,33 @@ window.onscroll = () => {
         backToTopBtn.style.display = 'none';
     }
 };
+
+document.querySelectorAll('.faq-toggle').forEach((toggleBtn) => {
+    toggleBtn.addEventListener('click', function () {
+        const faqItem = this.closest('.faq-item');
+        const answer = faqItem.querySelector('.faq-answer');
+        const isOpen = faqItem.classList.contains('open');
+
+        // Close all others if you want accordion behavior (optional)
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('open');
+            item.querySelector('.faq-answer').style.maxHeight = null;
+            item.querySelector('.faq-toggle').textContent = '+';
+        });
+
+        if (!isOpen) {
+            faqItem.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            this.textContent = '−'; // Change to minus when open
+        } else {
+            faqItem.classList.remove('open');
+            answer.style.maxHeight = null;
+            this.textContent = '+'; // Revert to plus when closed
+        }
+    });
+});
+
+
 
 // Smooth scroll to top
 backToTopBtn.addEventListener('click', () => {
