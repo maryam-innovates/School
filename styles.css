@@ -365,6 +365,14 @@ button:hover {
     display: block;
 }
 
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+
 /* Map Section */
 #map {
     padding: 50px 0;
