@@ -1,3 +1,7 @@
+
+Here is the updated CSS with the two primary colors — **#007bff (blue)** and **#f9f9f9 (off-white)** — applied for a more polished, modern look across your site:
+
+```css
 /* General Reset */
 *,
 *::before,
@@ -9,7 +13,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9; /* Off-white background */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -17,7 +21,7 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #003366;
+    background-color: #003366; /* Dark blue header */
     color: white;
     padding: 20px 0;
 }
@@ -33,7 +37,7 @@ header nav {
 }
 
 header nav a:hover {
-    color: #ffcc00;
+    color: #ffcc00; /* Highlight color */
     border-bottom: 2px solid #ffcc00;
 }
 
@@ -70,7 +74,7 @@ nav ul li a {
 }
 
 .mission-quote-container {
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 40px 20px;
     max-width: 900px;
     margin: 0 auto;
@@ -300,7 +304,7 @@ button:hover {
 #faq .section-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #007bff;
+  color: #007bff; /* Blue for FAQ header */
   margin-bottom: 20px;
 }
 
@@ -314,7 +318,7 @@ button:hover {
 }
 
 .faq-item:hover {
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Light blue hover */
 }
 
 .faq-question-wrapper {
@@ -332,7 +336,7 @@ button:hover {
 
 .faq-toggle {
   font-size: 1.5rem;
-  color: #007bff;
+  color: #007bff; /* Blue toggle */
   background: none;
   border: none;
   cursor: pointer;
@@ -342,7 +346,7 @@ button:hover {
 }
 
 .faq-toggle:hover {
-  color: #0056b3;
+  color: #0056b3; /* Darker blue hover */
 }
 
 .faq-answer {
@@ -351,12 +355,56 @@ button:hover {
   padding: 0 10px;
   font-size: 1rem;
   color: #555;
-  transition: max-height 0.5s ease, padding 0.5s ease;
+  transition: max-height 0.5s ease,padding 0.3s ease; }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 10px;
+  font-size: 1rem;
+  color: #555;
+  transition: max-height 0.5s ease, padding 0.3s ease;
 }
 
-.faq-item.open .faq-answer {
-  max-height: 300px; /* adjust based on your content */
-  padding-top: 10px;
+.faq-answer.open {
+  max-height: 500px; /* Adjust the max-height as needed */
+  padding: 10px;
+}
+
+.faq-question {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #032539;
+  cursor: pointer;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #ffd700; /* Highlight color on hover */
+}
+
+.faq-container {
+  margin: 20px;
+  padding: 0 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.faq-container h2 {
+  font-size: 2rem;
+  color: #032539;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.faq-container .faq {
+  margin-bottom: 15px;
+}
+
+.faq-container .faq:last-child {
+  margin-bottom: 0;
 }
 
  
@@ -367,7 +415,7 @@ button:hover {
     background-color: #f7f7f7;
 }
 
-
+/* Footer Section */
 footer {
     background-color: #032539;
     color: #ffffff;
@@ -467,7 +515,6 @@ footer {
     }
 }
 
-
 /* Back to Top Button */
 #backToTop {
     display: none;
@@ -491,4 +538,3 @@ footer {
     color: #032539;
     transform: translateY(-3px);
 }
-
