@@ -47,21 +47,20 @@ modalOverlay.addEventListener('click', (event) => {
 });
 
 
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const toggle = question.querySelector('.faq-toggle');
+document.querySelectorAll('.faq-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        const faqItem = toggle.closest('.faq-item');
+        const answer = faqItem.querySelector('.faq-answer');
 
-        // Toggle answer visibility
-        if (answer.style.display === 'block') {
-            answer.style.display = 'none';
-            toggle.textContent = '+';
-        } else {
-            answer.style.display = 'block';
-            toggle.textContent = '–';
-        }
+        // Toggle the answer's visibility
+        const isOpen = answer.style.display === 'block';
+        answer.style.display = isOpen ? 'none' : 'block';
+
+        // Change the button symbol
+        toggle.textContent = isOpen ? '+' : '–';
     });
 });
+
 
 const backToTopBtn = document.getElementById('backToTop');
 
