@@ -58,28 +58,12 @@ window.onscroll = () => {
     }
 };
 
-document.querySelectorAll('.faq-toggle').forEach((toggleBtn) => {
-    toggleBtn.addEventListener('click', function () {
-        const faqItem = this.closest('.faq-item');
-        const answer = faqItem.querySelector('.faq-answer');
-        const isOpen = faqItem.classList.contains('open');
+document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+        const faqItem = button.closest('.faq-item');
+        faqItem.classList.toggle('open');
 
-        // Close all others if you want accordion behavior (optional)
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.classList.remove('open');
-            item.querySelector('.faq-answer').style.maxHeight = null;
-            item.querySelector('.faq-toggle').textContent = '+';
-        });
-
-        if (!isOpen) {
-            faqItem.classList.add('open');
-            answer.style.maxHeight = answer.scrollHeight + "px";
-            this.textContent = '−'; // Change to minus when open
-        } else {
-            faqItem.classList.remove('open');
-            answer.style.maxHeight = null;
-            this.textContent = '+'; // Revert to plus when closed
-        }
+        button.textContent = faqItem.classList.contains('open') ? '−' : '+';
     });
 });
 
