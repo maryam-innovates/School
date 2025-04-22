@@ -45,3 +45,36 @@ modalOverlay.addEventListener('click', (event) => {
         modalOverlay.style.display = 'none'; // Hide modal if clicked outside content
     }
 });
+
+
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const toggle = question.querySelector('.faq-toggle');
+
+        // Toggle answer visibility
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+            toggle.textContent = '+';
+        } else {
+            answer.style.display = 'block';
+            toggle.textContent = '–';
+        }
+    });
+});
+
+const backToTopBtn = document.getElementById('backToTop');
+
+// Show/hide on scroll
+window.onscroll = () => {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = 'block';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+};
+
+// Smooth scroll to top
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
