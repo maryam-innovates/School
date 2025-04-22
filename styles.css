@@ -290,85 +290,75 @@ button:hover {
     margin-bottom: 1rem;
 }
 
-/* FAQ Section Styling */
 #faq {
-    width: 80%;
-    margin: 0 auto;
-    padding: 40px 0;
-    text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
 }
 
 #faq .section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #007bff;
-    margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 20px;
 }
 
 .faq-item {
-    background-color: #f9f9f9;
-    margin: 15px 0;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    transition: box-shadow 0.3s ease-in-out;
+  background-color: #f9f9f9;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .faq-item:hover {
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
 }
 
 .faq-question-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
 
 .faq-question {
-    font-size: 1.25rem;
-    color: #333;
-    margin-right: 10px;
-}
-
-.faq-answer {
-    display: none;
-    font-size: 1rem;
-    color: #555;
-    margin-top: 10px;
-    padding-left: 10px;
+  font-size: 1.25rem;
+  color: #333;
 }
 
 .faq-toggle {
-    font-size: 1.5rem;
-    color: #007bff;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px 10px;
-    font-weight: bold;
-    transition: transform 0.3s;
+  font-size: 1.5rem;
+  color: #007bff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-weight: bold;
+  transition: transform 0.3s;
 }
 
 .faq-toggle:hover {
-    color: #0056b3;
-}
-
-.faq-toggle:focus {
-    outline: none;
+  color: #0056b3;
 }
 
 .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out, padding 0.3s ease;
-    padding: 0 10px; /* collapsed */
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 10px;
+  font-size: 1rem;
+  color: #555;
+  transition: max-height 0.5s ease, padding 0.5s ease;
 }
 
 .faq-item.open .faq-answer {
-    max-height: 200px; /* or more, depending on content */
-    padding: 10px; /* expands with content */
+  max-height: 300px; /* adjust based on your content */
+  padding-top: 10px;
 }
+
  
 /* Map Section */
 #map {
