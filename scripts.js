@@ -58,18 +58,18 @@ window.onscroll = () => {
     }
 };
 
-document.querySelectorAll('.faq-toggle').forEach(button => {
-    button.addEventListener('click', () => {
-        const faqItem = button.closest('.faq-item');
-        faqItem.classList.toggle('open');
-
-        button.textContent = faqItem.classList.contains('open') ? '−' : '+';
-    });
-});
-
-
-
 // Smooth scroll to top
 backToTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+  document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.closest('.faq-item');
+      const isOpen = faqItem.classList.toggle('open');
+
+      // Toggle +/− sign
+      button.textContent = isOpen ? '−' : '+';
+    });
+  });
+
