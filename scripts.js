@@ -1,118 +1,47 @@
-// JavaScript for FAQ Toggle functionality
-const faqToggles = document.querySelectorAll('.faq-toggle');
-
-faqToggles.forEach((toggle) => {
-    toggle.addEventListener('click', () => {
-        const answer = toggle.closest('.faq-item').querySelector('.faq-answer');
-        if (answer.style.display === "none" || answer.style.display === "") {
-            answer.style.display = "block";  // Show answer
-            toggle.textContent = "−";  // Change to minus
-        } else {
-            answer.style.display = "none";  // Hide answer
-            toggle.textContent = "+";  // Change to plus
-        }
-    });
-});
-
-// Get all the necessary DOM elements
+// Select all gallery images and modal elements
 const galleryImages = document.querySelectorAll('.gallery-img');
-const modal = document.getElementById('imageModal');
+const modalOverlay = document.getElementById('imageModal');
 const modalImage = document.getElementById('modalImage');
-const closeButton = document.querySelector('.close-btn');
-const prevButton = document.querySelector('.prev-btn');
-const nextButton = document.querySelector('.next-btn');
+const closeBtn = document.querySelector('.close-btn');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
 
-let currentIndex = 0;
+// Variable to keep track of the current image index
+let currentImageIndex = -1;
 
-// Open the modal when an image is clicked
-galleryImages.forEach((image, index) => {
-    image.addEventListener('click', () => {
-        modal.style.display = 'flex';
-        modalImage.src = image.src;
-        currentIndex = index;
+// Open the modal with the clicked image
+galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => {
+        currentImageIndex = index;
+        modalOverlay.style.display = 'flex'; // Show modal
+        modalImage.src = img.src; // Set the image source to the clicked image
     });
 });
 
-// Close the modal when the close button is clicked
-closeButton.addEventListener('click', () => {
-    modal.style.display = 'none';
+// Close the modal
+closeBtn.addEventListener('click', () => {
+    modalOverlay.style.display = 'none'; // Hide modal
 });
 
 // Navigate to the previous image
-prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    modalImage.src = galleryImages[currentIndex].src;
+prevBtn.addEventListener('click', () => {
+    if (currentImageIndex > 0) {
+        currentImageIndex--;
+        modalImage.src = galleryImages[currentImageIndex].src; // Update image source
+    }
 });
 
 // Navigate to the next image
-nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % galleryImages.length;
-    modalImage.src = galleryImages[currentIndex].src;
+nextBtn.addEventListener('click', () => {
+    if (currentImageIndex < galleryImages.length - 1) {
+        currentImageIndex++;
+        modalImage.src = galleryImages[currentImageIndex].src; // Update image source
+    }
 });
 
-// Function to animate numbers
-function animateCounter(element, target) {
-    let current = 0;
-    const increment = Math.ceil(target / 100); // Dynamic increment
-    const interval = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            current = target;
-            clearInterval(interval);
-        }
-        element.textContent = current;
-    }, 20); // Smooth animation speed
-}
-
-// Initializing counters
-window.onload = function () {
-    animateCounter(document.getElementById('grade-8'), 255);
-    animateCounter(document.getElementById('grade-9'), 317);
-    animateCounter(document.getElementById('grade-10'), 184);
-    animateCounter(document.getElementById('grand-total'), 756);
-};
-
-// Typewriter Effect
-document.addEventListener("DOMContentLoaded", function () {
-    const textElement = document.getElementById("typewriter-text");
-    const text = "Our Students Enrollment 2024";
-    textElement.innerHTML = ""; // Clear initial text
-    let index = 0;
-    const speed = 100; // Typing speed in milliseconds
-
-    function typeWriter() {
-        if (index < text.length) {
-            textElement.innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, speed);
-        } else {
-            textElement.innerHTML = text.replace(
-                "2024",
-                `<span class="highlight">2024</span>`
-            );
-        }
+// Close modal when clicking outside the modal content
+modalOverlay.addEventListener('click', (event) => {
+    if (event.target === modalOverlay) {
+        modalOverlay.style.display = 'none'; // Hide modal if clicked outside content
     }
-
-    typeWriter();
 });
-
-// Get the button
-let backToTopButton = document.getElementById("backToTop");
-
-// When the user scrolls down 100px from the top of the document, show the button
-window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        backToTopButton.style.display = "block"; // Show the button
-    } else {
-        backToTopButton.style.display = "none"; // Hide the button
-    }
-};
-
-// When the user clicks the button, scroll to the top of the document
-backToTopButton.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
-
-answer.classList.toggle('visible');
-toggle.textContent = answer.classList.contains('visible') ? "−" : "+";
