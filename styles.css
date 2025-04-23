@@ -123,147 +123,102 @@ nav ul li a {
     }
 }
 
-/* Base Style */
-section {
-  padding: 60px 20px;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f7fafc; /* clean light background */
+/* General Card Styling */
+.card {
+  background: #f4f4f4;
+  border-radius: 12px;
+  margin: 20px;
+  padding: 20px;
+  width: 300px;
   text-align: center;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.section-title {
-  font-size: 2.2rem;
-  color: #032539;
-  margin-bottom: 40px;
-  text-align: center;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Container for Cards */
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-/* ========== ADMISSIONS CARDS (No flip) ========== */
-.admission-section .card {
-  background: white;
-  border-radius: 16px;
-  width: 280px;
-  padding: 25px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.admission-section .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-}
-
-.admission-section .card i {
+.card .icon-3d {
   font-size: 40px;
-  margin-bottom: 15px;
-  color: #065471;
-}
-
-.admission-section .card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
   color: #032539;
+  margin-bottom: 15px;
 }
 
-.admission-section .card p {
-  font-size: 0.95rem;
-  color: #333;
+/* Pop-3D Animation */
+.pop-3d {
+  transition: transform 0.3s ease-in-out;
 }
 
-/* ========== ACTIVITIES CARDS (Flip Enabled) ========== */
-.activities-section .flip-card {
-  background: transparent;
-  width: 280px;
-  height: 350px;
+.pop-3d:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* Flip Card Styling for Activities Section */
+.flip-card {
+  width: 300px;
+  height: 400px;
   perspective: 1000px;
 }
 
-.activities-section .flip-card-inner {
+.flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
-  transition: transform 0.8s ease;
   transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
 
-.activities-section .flip-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-.activities-section .flip-card-front,
-.activities-section .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 16px;
   backface-visibility: hidden;
-  background-color: white;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  padding: 25px;
+  border-radius: 12px;
 }
 
-.activities-section .flip-card-front {
-  color: #032539;
+.flip-card-front {
+  background-color: #f4f4f4;
+  color: black;
 }
 
-.activities-section .flip-card-back {
+.flip-card-back {
+  background-color: #032539;
+  color: white;
   transform: rotateY(180deg);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 15px;
+  text-align: center;
 }
 
-.activities-section .flip-card-back ul {
-  text-align: left;
-  padding-left: 20px;
-  font-size: 0.95rem;
-}
-
-.activities-section .flip-card video {
-  width: 100%;
+/* Video in Flip Card */
+.flip-card-back video {
+  max-width: 100%;
+  height: 100%;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-}
-
-.activities-section .flip-card video:hover {
-  transform: scale(1.03);
-}
-
-.card i {
-  font-size: 36px;
-  margin-bottom: 10px;
-  color: #065471;
-}
-
-.activities-section .flip-card-back video {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  max-height: 200px;
   object-fit: cover;
-  display: block;
-  margin: 0 auto;
+  overflow: hidden;
 }
 
-.activities-section .flip-card-back {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+@media (max-width: 768px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .flip-card {
+    margin: 10px;
+  }
+}
 
 /* Gallery Section */
 .gallery {
