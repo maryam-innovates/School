@@ -1,13 +1,8 @@
-// Optional enhancement: open video in fullscreen on click
-const videos = document.querySelectorAll('.flip-card-back video');
-videos.forEach(video => {
-  video.addEventListener('click', () => {
-    if (video.requestFullscreen) {
-      video.requestFullscreen();
-    } else if (video.webkitRequestFullscreen) {
-      video.webkitRequestFullscreen();
-    } else if (video.msRequestFullscreen) {
-      video.msRequestFullscreen();
+document.querySelectorAll('.flip-card').forEach(card => {
+  card.addEventListener('click', function() {
+    const video = this.querySelector('.flip-card-back video');
+    if (video) {
+      video.play();
     }
   });
 });
