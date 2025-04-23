@@ -1,3 +1,19 @@
+  function flipCard(cardElement, videoId = null) {
+    const wrapper = cardElement.classList.contains('flipped') ? cardElement : cardElement;
+    wrapper.classList.toggle('flipped');
+
+    if (videoId) {
+      const video = document.getElementById(videoId);
+      if (wrapper.classList.contains('flipped')) {
+        video.currentTime = 0;
+        video.play();
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    }
+  }
+
 // Select all gallery images and modal elements
 const galleryImages = document.querySelectorAll('.gallery-img');
 const modalOverlay = document.getElementById('imageModal');
