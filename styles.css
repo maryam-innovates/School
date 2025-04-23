@@ -238,6 +238,7 @@ nav ul li a {
 }
 
 .section-title {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center; /* Centers the text horizontally */
   font-size: 2rem; /* Adjust the font size as needed */
   color: #032539; /* Or use the desired color */
@@ -394,28 +395,32 @@ button:hover {
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #333;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Review Container */
 .review-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     overflow: hidden; /* Hide overflow to create the scrolling effect */
     margin-top: 20px;
 }
 
 .review-wrapper {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     animation: scrollReviews 20s linear infinite; /* Infinite scrolling */
 }
 
 .review-item {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-width: 200px; /* Adjust width for your images */
     margin: 0 30px;
     flex-shrink: 0; /* Prevent shrinking */
 }
 
 .review-image {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     height: auto;
     border-radius: 10px; /* Optional: to add rounded corners to the images */
