@@ -1,18 +1,16 @@
-  function flipCard(cardElement, videoId = null) {
-    const wrapper = cardElement.classList.contains('flipped') ? cardElement : cardElement;
-    wrapper.classList.toggle('flipped');
-
-    if (videoId) {
-      const video = document.getElementById(videoId);
-      if (wrapper.classList.contains('flipped')) {
-        video.currentTime = 0;
-        video.play();
-      } else {
-        video.pause();
-        video.currentTime = 0;
-      }
+// Optional enhancement: open video in fullscreen on click
+const videos = document.querySelectorAll('.flip-card-back video');
+videos.forEach(video => {
+  video.addEventListener('click', () => {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) {
+      video.msRequestFullscreen();
     }
-  }
+  });
+});
 
 // Select all gallery images and modal elements
 const galleryImages = document.querySelectorAll('.gallery-img');
