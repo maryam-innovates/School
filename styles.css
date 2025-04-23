@@ -237,6 +237,17 @@ nav ul li a {
   justify-content: space-between;
 }
 
+.section-title {
+  text-align: center; /* Centers the text horizontally */
+  font-size: 2rem; /* Adjust the font size as needed */
+  color: #032539; /* Or use the desired color */
+  margin-bottom: 20px; /* Adds space below the heading */
+}
+
+.highlight-section {
+  padding: 40px 20px; /* Add padding to the sections for spacing */
+}
+
 /* Gallery Section */
 .gallery {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
