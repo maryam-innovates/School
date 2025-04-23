@@ -436,6 +436,15 @@ button:hover {
     }
 }
 
+@keyframes scrollReviews {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Adjust this if your loop is longer */
+}
+
+.review-wrapper {
+  animation: scrollReviews 30s linear infinite; /* Increase time if adding many images */
+}
+
 
 #faq {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
