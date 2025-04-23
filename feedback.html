@@ -164,109 +164,84 @@ main {
   transform: translateY(0);
 }
 
-/* Footer Styling – EXACT as Main Page */
 footer {
-  background-color: #032539;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
-  padding: 40px 20px;
-  text-align: center;
+    background-color: #032539;
+    color: #ffffff;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .footer-left {
-  flex: 1;
-  text-align: left;
+    text-align: center;
 }
 
 .footer-left img.school-logo {
-  max-width: 150px;
-  margin-bottom: 10px;
+    width: 80px;
+    margin-bottom: 10px;
 }
 
 .footer-left h3 {
-  font-size: 1.6em;
-  margin-bottom: 10px;
-}
-
-.footer-left p a {
-  color: #fff;
-  font-size: 1.1em;
-}
-
-.footer-left p a:hover {
-  color: #2d8fdf;
+    font-size: 20px;
+    font-weight: 600;
+    color: #f0f0f0;
 }
 
 .footer-right {
-  flex: 2;
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
 }
 
 .footer-section {
-  flex: 1;
-  margin: 10px;
+    min-width: 220px;
 }
 
 .footer-section h3 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffd700;
+    border-bottom: 1px solid #ffd700;
+    padding-bottom: 5px;
 }
 
 .footer-section ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.footer-section li {
-  margin: 8px 0;
+.footer-section ul li {
+    margin: 8px 0;
 }
 
-.footer-section li a {
-  color: #fff;
-  font-size: 1.1em;
-  transition: color 0.3s ease;
+.footer-section ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
 }
 
-.footer-section li a:hover {
-  color: #2d8fdf;
+.footer-section ul li a:hover {
+    color: #ffd700;
+    text-decoration: underline;
 }
 
 .footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.footer-bottom p {
-  font-size: 0.9em;
-  color: #ccc;
-}
-
-/* Responsive Footer */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
+    border-top: 1px solid #555;
     text-align: center;
-  }
-
-  .footer-right {
-    flex-direction: column;
-  }
-
-  .footer-left {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+    padding-top: 15px;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #bbb;
 }
 
 /* Back to Top Button */
@@ -292,15 +267,6 @@ footer {
     color: #032539;
     transform: translateY(-3px);
 }
-     /* Text Selection Styling */
-    ::selection {
-      background: #4285f4;
-      color: white;
-    }
-    ::-moz-selection {
-      background: #4285f4;
-      color: white;
-    } 
   
 </style>
 </head>
@@ -342,49 +308,45 @@ footer {
     </div>
   </main>
 
-    <!-- Back to Top Button with Font Awesome Icon -->
+  <!-- Back to Top Button with Font Awesome Icon -->
 <button id="backToTop" class="back-to-top-btn">
     <i class="fas fa-arrow-up"></i>
 </button>
+<footer>
+<!-- Right Section: Quick Links -->
+        <div class="footer-right">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="https://hed.punjab.gov.pk/">https://hed.punjab.gov.pk/</a></li>
+                    <li><a href="http://mis.hed.punjab.gov.pk/">http://mis.hed.punjab.gov.pk/</a></li>
+                    <li><a href="https://hed.punjab.gov.pk/colleges">https://hed.punjab.gov.pk/colleges</a></li>
+                    <li><a href="https://www.punjab.gov.pk/hed">https://www.punjab.gov.pk/hed</a></li>
+                    <li><a href="http://www.biselahore.com/">http://www.biselahore.com/</a></li>
+                    <li><a href="http://www.bisefsd.edu.pk/">http://www.bisefsd.edu.pk/</a></li>
+                    <li><a href="https://gcu.edu.pk/">https://gcu.edu.pk/</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="https://bisesahiwal.edu.pk/">https://bisesahiwal.edu.pk/</a></li>
+                    <li><a href="https://www.bisedgkhan.edu.pk/">https://www.bisedgkhan.edu.pk/</a></li>  
+                    <li><a href="http://www.bisesargodha.edu.pk/">http://www.bisesargodha.edu.pk/</a></li>  
+                     <li><a href="http://biserawalpindi.edu.pk/">http://biserawalpindi.edu.pk/</a></li> 
+                     <li><a href="https://www.bisebwp.edu.pk/">https://www.bisebwp.edu.pk/</a></li> 
+                     <li><a href=" http://www.bisegrw.edu.pk/"> http://www.bisegrw.edu.pk/</a></li>  
+                     <li><a href="http://www.lcwu.edu.pk/">http://www.lcwu.edu.pk/</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-container">
-      <div class="footer-left">
-        <img src="https://gghs-tahir-model.netlify.app/Images/logo.png" alt="School Logo" class="school-logo" />
-        <h3>Govt. Tahir Model Girls High School</h3>
-      </div>
-      <div class="footer-right">
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="https://hed.punjab.gov.pk/">hed.punjab.gov.pk</a></li>
-            <li><a href="http://mis.hed.punjab.gov.pk/">mis.hed.punjab.gov.pk</a></li>
-            <li><a href="https://hed.punjab.gov.pk/colleges">hed.punjab.gov.pk/colleges</a></li>
-            <li><a href="https://www.punjab.gov.pk/hed">www.punjab.gov.pk/hed</a></li>
-            <li><a href="http://www.biselahore.com/">www.biselahore.com</a></li>
-            <li><a href="http://www.bisefsd.edu.pk/">www.bisefsd.edu.pk</a></li>
-            <li><a href="https://gcu.edu.pk/">gcu.edu.pk</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="https://bisesahiwal.edu.pk/">bisesahiwal.edu.pk</a></li>
-            <li><a href="https://www.bisedgkhan.edu.pk/">www.bisedgkhan.edu.pk</a></li>
-            <li><a href="http://www.bisesargodha.edu.pk/">www.bisesargodha.edu.pk</a></li>
-            <li><a href="http://biserawalpindi.edu.pk/">biserawalpindi.edu.pk</a></li>
-            <li><a href="https://www.bisebwp.edu.pk/">www.bisebwp.edu.pk</a></li>
-            <li><a href="http://www.bisegrw.edu.pk/">www.bisegrw.edu.pk</a></li>
-            <li><a href="http://www.lcwu.edu.pk/">www.lcwu.edu.pk</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <!-- Footer Bottom Section -->
     <div class="footer-bottom">
-      <p>&copy; 2025 Govt. Tahir Model Girls High School. All Rights Reserved.</p>
+        <p>&copy; 2025 Govt. Tahir Model Girls High School. All Rights Reserved.</p>
     </div>
-  </footer>
+</footer> 
   
   <script>
     // Feedback form AJAX submission using Formspree and SweetAlert2 for a cheerful alert
@@ -419,7 +381,7 @@ footer {
       xhr.send(data);
     });
     
-    const backToTopBtn = document.getElementById('backToTop');
+   const backToTopBtn = document.getElementById('backToTop');
 
 // Show/hide on scroll
 window.onscroll = () => {
