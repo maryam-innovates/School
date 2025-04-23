@@ -293,15 +293,15 @@ footer {
       <h2>We Value Your Feedback</h2>
       <form id="feedbackForm" class="feedback-form" action="https://formspree.io/f/mbldbkeb" method="POST">
         <div class="form-group">
-          <label for="name">Your Name:</label>
+          <label for="name">Name:</label>
           <input type="text" id="name" name="name" placeholder="Enter your name" required />
         </div>
         <div class="form-group">
-          <label for="email">Your Email:</label>
+          <label for="email">Email:</label>
           <input type="email" id="email" name="email" placeholder="you@example.com" required />
         </div>
         <div class="form-group">
-          <label for="message">Your Message:</label>
+          <label for="message">Message:</label>
           <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
         </div>
         <button type="submit">Send</button>
@@ -351,6 +351,34 @@ footer {
 </footer> 
   
   <script>
+
+   const backToTopBtn = document.getElementById('backToTop');
+
+// Show/hide on scroll
+window.onscroll = () => {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = 'block';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+};
+
+// Smooth scroll to top
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+  document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.closest('.faq-item');
+      const isOpen = faqItem.classList.toggle('open');
+
+      // Toggle +/− sign
+      button.textContent = isOpen ? '−' : '+';
+    });
+  });
+
+    
     // Feedback form AJAX submission using Formspree and SweetAlert2 for a cheerful alert
     document.getElementById('feedbackForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -382,32 +410,6 @@ footer {
       };
       xhr.send(data);
     });
-    
-   const backToTopBtn = document.getElementById('backToTop');
-
-// Show/hide on scroll
-window.onscroll = () => {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopBtn.style.display = 'block';
-    } else {
-        backToTopBtn.style.display = 'none';
-    }
-};
-
-// Smooth scroll to top
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-  document.querySelectorAll('.faq-toggle').forEach(button => {
-    button.addEventListener('click', () => {
-      const faqItem = button.closest('.faq-item');
-      const isOpen = faqItem.classList.toggle('open');
-
-      // Toggle +/− sign
-      button.textContent = isOpen ? '−' : '+';
-    });
-  });
     
   </script>
 </body>
