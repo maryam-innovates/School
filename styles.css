@@ -246,6 +246,24 @@ section {
   color: #065471;
 }
 
+.activities-section .flip-card-back video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  max-height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.activities-section .flip-card-back {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* Gallery Section */
 .gallery {
