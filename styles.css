@@ -125,11 +125,13 @@ nav ul li a {
 
 /* Gallery Section */
 .gallery {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     padding: 50px 20px;
 }
 
 .gallery h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 20px;
@@ -258,6 +260,7 @@ button:hover {
 }
 
 .section-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 2rem;
@@ -292,6 +295,7 @@ button:hover {
 }
 
 #faq {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 80%;
   margin: 0 auto;
   padding: 40px 0;
@@ -327,6 +331,7 @@ button:hover {
 }
 
 .faq-question {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.25rem;
   color: #032539; /* Updated to your desired footer color */
 }
@@ -356,12 +361,14 @@ button:hover {
 }
 
 .faq-item.open .faq-answer {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   max-height: 300px; /* adjust based on your content */
   padding-top: 10px;
 }
 
 /* Map Section */
 #map {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 50px 0;
     text-align: center;
     background-color: #f7f7f7;
