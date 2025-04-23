@@ -378,6 +378,58 @@ button:hover {
     }
 }
 
+
+
+/* General Section Styles */
+.review-section {
+    width: 100%;
+    padding: 40px 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.review-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Review Container */
+.review-container {
+    width: 100%;
+    overflow: hidden; /* Hide overflow to create the scrolling effect */
+    margin-top: 20px;
+}
+
+.review-wrapper {
+    display: flex;
+    animation: scrollReviews 20s linear infinite; /* Infinite scrolling */
+}
+
+.review-item {
+    min-width: 200px; /* Adjust width for your images */
+    margin: 0 30px;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.review-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: to add rounded corners to the images */
+}
+
+/* Keyframe for continuous horizontal scroll */
+@keyframes scrollReviews {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
 #faq {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 80%;
@@ -561,55 +613,4 @@ footer {
     color: #032539;
     transform: translateY(-3px);
 }
-
-
-/* General Section Styles */
-.review-section {
-    width: 100%;
-    padding: 40px 0;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-.review-title {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Review Container */
-.review-container {
-    width: 100%;
-    overflow: hidden; /* Hide overflow to create the scrolling effect */
-    margin-top: 20px;
-}
-
-.review-wrapper {
-    display: flex;
-    animation: scrollReviews 20s linear infinite; /* Infinite scrolling */
-}
-
-.review-item {
-    min-width: 200px; /* Adjust width for your images */
-    margin: 0 30px;
-    flex-shrink: 0; /* Prevent shrinking */
-}
-
-.review-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px; /* Optional: to add rounded corners to the images */
-}
-
-/* Keyframe for continuous horizontal scroll */
-@keyframes scrollReviews {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
 
