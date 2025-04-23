@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f4;
     line-height: 1.6;
     margin: 0;
@@ -17,7 +17,8 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #003366;
+    background-color: #032539:
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     padding: 20px 0;
 }
