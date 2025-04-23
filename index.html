@@ -90,30 +90,61 @@ young women who are ready to make a difference in the world.",
             <p>Receive confirmation of admission after fulfilling all requirements.</p>
         </div>
     </div>
+    
 </section>
+<!-- Updated Activities Section with Flip Card Effects -->
+<section id="activities" class="highlight-section" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <h2 class="section-title" style="color: #032539;">Our Vibrant Activities <i class="fas fa-heartbeat"></i></h2>
+  <div class="card-container">
 
-<!-- Activities Section -->
-<section id="activities" class="highlight-section">
-    <h2 class="section-title">Our Vibrant Activities <i class="fas fa-heartbeat"></i></h2>
-    <div class="card-container">
-        <div class="card pop-3d">
-            <i class="fas fa-theater-masks icon-3d"></i>
-            <h3>Cultural Festival</h3>
-            <p>We celebrate our rich culture with vibrant events, including the yearly Cultural Day festival, encouraging creativity and community bonding.</p>
+    <!-- Cultural Festival Card -->
+    <div class="card-wrapper" onclick="flipCard(this, 'culture-video')">
+      <div class="card-inner">
+        <div class="card-front" style="background-color: #032539; color: #f4f4f4;">
+          <i class="fas fa-theater-masks icon-3d"></i>
+          <h3>Cultural Festival</h3>
+          <p>We celebrate our rich culture with vibrant events, including the yearly Cultural Festival.</p>
         </div>
-        <div class="card pop-3d">
-            <i class="fas fa-award icon-3d"></i>
-            <h3>Award Ceremony</h3>
-            <p>Our yearly award ceremony honors our students' achievements and hard work in academic excellence.</p>
+        <div class="card-back">
+          <video id="culture-video" src="Images/culture.mp4" muted></video>
         </div>
-        <div class="card pop-3d">
-            <i class="fas fa-users icon-3d"></i>
-            <h3>Girl Guiding</h3>
-            <p>Girl Guiding empowers students with leadership and team spirit through practical activities and volunteering opportunities.</p>
-        </div>
+      </div>
     </div>
-</section>
 
+    <!-- Award Ceremony Card -->
+    <div class="card-wrapper" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front" style="background-color: #032539; color: #f4f4f4;">
+          <i class="fas fa-award icon-3d"></i>
+          <h3>Award Ceremony</h3>
+          <p>Our yearly award ceremony honors our students' achievements and academic excellence.</p>
+        </div>
+        <div class="card-back" style="background-color: #032539; color: #f4f4f4; padding: 15px;">
+          <p>Positions are awarded to top students by their class teachers.</p>
+          <p>The ceremony honors 1st to 3rd position holders across all grades.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Girl Guiding Card -->
+    <div class="card-wrapper" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front" style="background-color: #032539; color: #f4f4f4;">
+          <i class="fas fa-users icon-3d"></i>
+          <h3>Girl Guiding</h3>
+          <p>Empowering students with leadership through team-based guiding activities.</p>
+        </div>
+        <div class="card-back" style="background-color: #032539; color: #f4f4f4; padding: 15px;">
+          <ol>
+            <li>Confirm this activity is still ongoing at the school.</li>
+            <li>Guides wear white shalwar kameez with a designated sash color.</li>
+            <li>Guides help maintain discipline and assist during events.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Gallery Section -->
 <section id="gallery" class="gallery">
