@@ -460,7 +460,7 @@ button:hover {
 
 .review-item {
   flex: 0 0 auto;
-  margin: 0 1rem;
+  margin: 0 1rem; /* Default spacing */
 }
 
 .review-image {
@@ -469,23 +469,30 @@ button:hover {
   height: auto;
   border-radius: 10px;
   object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* 📱 Responsive tweaks */
+/* Medium screens */
 @media (max-width: 768px) {
   .review-image {
     max-width: 140px;
   }
-}
-
-@media (max-width: 480px) {
-  .review-image {
-    max-width: 120px;
-    margin: 0 0.5rem;
+  .review-item {
+    margin: 0 0.75rem; /* Slightly smaller gap */
   }
 }
 
-/* 🌀 Animation */
+/* Small screens */
+@media (max-width: 480px) {
+  .review-image {
+    max-width: 110px;
+  }
+  .review-item {
+    margin: 0 0.4rem; /* Tight spacing for mobiles */
+  }
+}
+
+/* Smooth loop */
 @keyframes scrollReviews {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
