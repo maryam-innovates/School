@@ -460,7 +460,7 @@ button:hover {
 
 .review-item {
   flex: 0 0 auto;
-  margin: 0 1rem; /* Default spacing */
+  margin: 0 1rem; /* Normal margin for large screens */
 }
 
 .review-image {
@@ -472,31 +472,32 @@ button:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Medium screens */
+/* 👉 Make it tighter ONLY on small screens */
 @media (max-width: 768px) {
+  .review-item {
+    margin: 0 0.6rem;
+  }
+
   .review-image {
     max-width: 140px;
   }
-  .review-item {
-    margin: 0 0.75rem; /* Slightly smaller gap */
-  }
 }
 
-/* Small screens */
 @media (max-width: 480px) {
+  .review-item {
+    margin: 0 0.3rem; /* 👈 Much tighter spacing on phones */
+  }
+
   .review-image {
     max-width: 110px;
   }
-  .review-item {
-    margin: 0 0.4rem; /* Tight spacing for mobiles */
-  }
 }
 
-/* Smooth loop */
 @keyframes scrollReviews {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
 
 
 #faq {
