@@ -298,6 +298,49 @@ i768!4f13.1!3m3!1m2!1s0x39191b0b0a7e1fab%3A0xe9f084519d6c214a!2sGGHS%20Tahir%20M
 <button id="backToTop" class="back-to-top-btn">
     <i class="fas fa-arrow-up"></i>
 </button>
+
+    <!-- Accessibility Panel Button -->
+<div class="accessibility-button">
+  <button onclick="togglePanel()">🔧 Accessibility</button>
+</div>
+
+<!-- Accessibility Panel (hidden by default) -->
+<div id="accessibility-panel" class="accessibility-panel">
+  <div class="panel-header">
+    <h3>Accessibility Options</h3>
+    <button class="close-button" onclick="togglePanel()">✖</button>
+  </div>
+  
+  <!-- Font Size Section -->
+  <div class="panel-section">
+    <h4>Font Size</h4>
+    <button onclick="changeFontSize('small')">A-</button>
+    <button onclick="changeFontSize('medium')">A</button>
+    <button onclick="changeFontSize('large')">A+</button>
+  </div>
+  
+  <!-- Font Family Section -->
+  <div class="panel-section">
+    <h4>Font Family</h4>
+    <button onclick="changeFontFamily('sans-serif')">Sans-serif</button>
+    <button onclick="changeFontFamily('serif')">Serif</button>
+    <button onclick="changeFontFamily('monospace')">Monospace</button>
+  </div>
+
+  <!-- Language Change Section -->
+  <div class="panel-section">
+    <h4>Language</h4>
+    <button onclick="setLanguage('en')">English</button>
+    <button onclick="setLanguage('ur')">اردو</button>
+  </div>
+  
+  <!-- Dark Mode Toggle -->
+  <div class="panel-section">
+    <h4>Dark Mode</h4>
+    <button onclick="toggleDarkMode()">Enable Dark Mode</button>
+  </div>
+</div>
+
 <footer>
 <!-- Right Section: Quick Links -->
         <div class="footer-right">
