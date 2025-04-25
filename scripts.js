@@ -82,7 +82,7 @@ backToTopBtn.addEventListener('click', () => {
     });
   });
 
-<script>
+
   // Toggle the accessibility panel visibility
   function togglePanel() {
     const panel = document.getElementById('accessibility-panel');
@@ -134,6 +134,6 @@ backToTopBtn.addEventListener('click', () => {
     const body = document.body;
     body.classList.toggle("dark-mode");
   }
-</script>
+
 
 
